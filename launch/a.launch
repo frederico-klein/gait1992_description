@@ -1,0 +1,30 @@
+<launch>
+  <!-- We resume the logic in empty_world.launch, changing only the name of the world to be launched -->
+  <!--<include file="$(find gazebo_ros)/launch/empty_world.launch">
+    <arg name="paused" value="false"/>
+    <arg name="use_sim_time" value="true"/>
+    <arg name="gui" value="true"/>
+    <arg name="recording" value="false"/>
+    <arg name="debug" value="false"/>
+  </include>-->
+
+  <node name="rviz" pkg="rviz" type="rviz" args="-d $(find human_control)/rviz/human_control.rviz" />
+
+    <param name="robot_description" command="cat /catkin_opensim/src/human_control/description/model_generic/model_generic_aCol.urdf"/>
+
+ 
+    <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" respawn="false" output="screen">
+    </node>
+
+
+    <node pkg="tf" type="static_transform_publisher" name="ground_pelvis" args=" 0.00000000  0.00000000  0.00000000 0 0 0 ground pelvis 1" />
+
+    <node pkg="tf" type="static_transform_publisher" name="subtalar_r" args=" 0.00792000 -0.04877000 -0.04195000 0 0 0 talus_r calcn_r 1" />
+
+    <node pkg="tf" type="static_transform_publisher" name="mtp_r" args=" 0.00108000  0.17880000 -0.00200000 0 0 0 calcn_r toes_r 1" />
+
+    <node pkg="tf" type="static_transform_publisher" name="subtalar_l" args="-0.00792000 -0.04877000 -0.04195000 0 0 0 talus_l calcn_l 1" />
+
+    <node pkg="tf" type="static_transform_publisher" name="mtp_l" args="-0.00108000  0.17880000 -0.00200000 0 0 0 calcn_l toes_l 1" />
+
+</launch>

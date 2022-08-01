@@ -1,0 +1,40 @@
+<launch>
+  <!-- We resume the logic in empty_world.launch, changing only the name of the world to be launched -->
+  <!--<include file="$(find gazebo_ros)/launch/empty_world.launch">
+    <arg name="paused" value="false"/>
+    <arg name="use_sim_time" value="true"/>
+    <arg name="gui" value="true"/>
+    <arg name="recording" value="false"/>
+    <arg name="debug" value="false"/>
+  </include>-->
+
+  <node name="rviz" pkg="rviz" type="rviz" args="-d $(find human_control)/rviz/human_control.rviz" />
+
+    <param name="robot_description" command="cat /catkin_opensim/src/human_control/description/model_generic/model_generic_aCol.urdf"/>
+
+    <rosparam file="/catkin_opensim/src/human_control/config/model_generic_control.yaml" command="load"/>
+ 
+    <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" respawn="false" output="screen">
+        <remap from="/joint_states" to="/model_generic/joint_states" />
+    </node>
+
+    <node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher" respawn="false" output="screen">
+        <remap from="/joint_states" to="/model_generic/joint_states" />
+        <param name="use_gui" value="true" />
+    </node>
+
+    <node name="controller_spawner" pkg="controller_manager" type="spawner" respawn="false" output="screen" ns="/model_generic" args="hip_r_RX_position_controller hip_r_RY_position_controller hip_r_RZ_position_controller knee_r_RX_position_controller knee_r_RZ_position_controller knee_r_RY_position_controller ankle_r_position_controller hip_l_RX_position_controller hip_l_RY_position_controller hip_l_RZ_position_controller knee_l_RX_position_controller knee_l_RZ_position_controller knee_l_RY_position_controller ankle_l_position_controller back_RX_position_controller back_RY_position_controller back_RZ_position_controller  joint_state_controller"/>
+
+    <node name="spawn_urdf" pkg="gazebo_ros" type="spawn_model" args="-file /catkin_opensim/src/human_control/description/model_generic/model_generic_aCol.urdf -urdf -x 0 -y 0 -z 2 -model model_generic" />
+
+    <node pkg="tf" type="static_transform_publisher" name="ground_pelvis" args=" 0.00000000  0.00000000  0.00000000 0 0 0 ground pelvis 1" />
+
+    <node pkg="tf" type="static_transform_publisher" name="subtalar_r" args=" 0.00792000 -0.04877000 -0.04195000 0 0 0 talus_r calcn_r 1" />
+
+    <node pkg="tf" type="static_transform_publisher" name="mtp_r" args=" 0.00108000  0.17880000 -0.00200000 0 0 0 calcn_r toes_r 1" />
+
+    <node pkg="tf" type="static_transform_publisher" name="subtalar_l" args="-0.00792000 -0.04877000 -0.04195000 0 0 0 talus_l calcn_l 1" />
+
+    <node pkg="tf" type="static_transform_publisher" name="mtp_l" args="-0.00108000  0.17880000 -0.00200000 0 0 0 calcn_l toes_l 1" />
+
+</launch>

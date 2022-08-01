@@ -1,0 +1,91 @@
+model_generic:
+
+    joint_state_controller:
+        type: joint_state_controller/JointStateController
+        publish_rate: 50
+
+    hip_r_RX_position_controller:
+        type: effort_controllers/JointPositionController
+        joint: hip_r_RX
+        pid: {p: 100.0, i: 0.01, d: 10.0}
+
+    hip_r_RY_position_controller:
+        type: effort_controllers/JointPositionController
+        joint: hip_r_RY
+        pid: {p: 100.0, i: 0.01, d: 10.0}
+
+    hip_r_RZ_position_controller:
+        type: effort_controllers/JointPositionController
+        joint: hip_r_RZ
+        pid: {p: 100.0, i: 0.01, d: 10.0}
+
+    knee_r_RX_position_controller:
+        type: effort_controllers/JointPositionController
+        joint: knee_r_RX
+        pid: {p: 100.0, i: 0.01, d: 10.0}
+
+    knee_r_RZ_position_controller:
+        type: effort_controllers/JointPositionController
+        joint: knee_r_RZ
+        pid: {p: 100.0, i: 0.01, d: 10.0}
+
+    knee_r_RY_position_controller:
+        type: effort_controllers/JointPositionController
+        joint: knee_r_RY
+        pid: {p: 100.0, i: 0.01, d: 10.0}
+
+    ankle_r_position_controller:
+        type: effort_controllers/JointPositionController
+        joint: ankle_r
+        pid: {p: 100.0, i: 0.01, d: 10.0}
+
+    hip_l_RX_position_controller:
+        type: effort_controllers/JointPositionController
+        joint: hip_l_RX
+        pid: {p: 100.0, i: 0.01, d: 10.0}
+
+    hip_l_RY_position_controller:
+        type: effort_controllers/JointPositionController
+        joint: hip_l_RY
+        pid: {p: 100.0, i: 0.01, d: 10.0}
+
+    hip_l_RZ_position_controller:
+        type: effort_controllers/JointPositionController
+        joint: hip_l_RZ
+        pid: {p: 100.0, i: 0.01, d: 10.0}
+
+    knee_l_RX_position_controller:
+        type: effort_controllers/JointPositionController
+        joint: knee_l_RX
+        pid: {p: 100.0, i: 0.01, d: 10.0}
+
+    knee_l_RZ_position_controller:
+        type: effort_controllers/JointPositionController
+        joint: knee_l_RZ
+        pid: {p: 100.0, i: 0.01, d: 10.0}
+
+    knee_l_RY_position_controller:
+        type: effort_controllers/JointPositionController
+        joint: knee_l_RY
+        pid: {p: 100.0, i: 0.01, d: 10.0}
+
+    ankle_l_position_controller:
+        type: effort_controllers/JointPositionController
+        joint: ankle_l
+        pid: {p: 100.0, i: 0.01, d: 10.0}
+
+    back_RX_position_controller:
+        type: effort_controllers/JointPositionController
+        joint: back_RX
+        pid: {p: 100.0, i: 0.01, d: 10.0}
+
+    back_RY_position_controller:
+        type: effort_controllers/JointPositionController
+        joint: back_RY
+        pid: {p: 100.0, i: 0.01, d: 10.0}
+
+    back_RZ_position_controller:
+        type: effort_controllers/JointPositionController
+        joint: back_RZ
+        pid: {p: 100.0, i: 0.01, d: 10.0}
+
