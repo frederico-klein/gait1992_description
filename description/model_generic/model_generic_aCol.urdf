@@ -22,7 +22,10 @@
             <geometry> 
                 <mesh filename="package://human_control/description/model_generic/stl/sacrum.stl" scale=" 1.00000000  1.00000000  1.00000000"/> 
             </geometry> 
-        </visual> 
+        <material name="">
+		<color rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+	</material>
+	</visual> 
  
         <collision name="sacrum"> 
             <origin xyz=" 0.00000889 -0.12485057  0.03677944" rpy=" 0.00000000  0.00000000  0.00000000" /> 
@@ -36,7 +39,10 @@
             <geometry> 
                 <mesh filename="package://human_control/description/model_generic/stl/pelvis.stl" scale=" 1.00000000  1.00000000  1.00000000"/> 
             </geometry> 
-        </visual> 
+        <material name="">
+		<color rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+	</material>
+	</visual> 
  
         <collision name="pelvis"> 
             <origin xyz=" 0.07386850 -0.07562926 -0.00743482" rpy=" 0.00000000  0.00000000  0.00000000" /> 
@@ -50,7 +56,10 @@
             <geometry> 
                 <mesh filename="package://human_control/description/model_generic/stl/l_pelvis.stl" scale=" 1.00000000  1.00000000  1.00000000"/> 
             </geometry> 
-        </visual> 
+        <material name="">
+		<color rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+	</material>
+	</visual> 
  
         <collision name="l_pelvis"> 
             <origin xyz="-0.07386850 -0.07562925 -0.00743482" rpy=" 0.00000000  0.00000000  0.00000000" /> 
@@ -74,7 +83,10 @@
             <geometry> 
                 <mesh filename="package://human_control/description/model_generic/stl/femur_r.stl" scale=" 1.00000000  1.00000000  1.00000000"/> 
             </geometry> 
-        </visual> 
+        <material name="">
+		<color rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+	</material>
+	</visual> 
  
         <collision name="femur_r"> 
             <origin xyz=" 0.01594298  0.00497468 -0.20699716" rpy=" 0.00000000  0.00000000  0.00000000" /> 
@@ -98,7 +110,10 @@
             <geometry> 
                 <mesh filename="package://human_control/description/model_generic/stl/tibia_r.stl" scale=" 1.00000000  1.00000000  1.00000000"/> 
             </geometry> 
-        </visual> 
+        <material name="">
+		<color rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+	</material>
+	</visual> 
  
         <collision name="tibia_r"> 
             <origin xyz="-0.00346711  0.00744511 -0.18540447" rpy=" 0.00000000  0.00000000  0.00000000" /> 
@@ -112,7 +127,10 @@
             <geometry> 
                 <mesh filename="package://human_control/description/model_generic/stl/fibula.stl" scale=" 1.00000000  1.00000000  1.00000000"/> 
             </geometry> 
-        </visual> 
+        <material name="">
+		<color rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+	</material>
+	</visual> 
  
         <collision name="fibula"> 
             <origin xyz=" 0.03035371 -0.00401039 -0.23035097" rpy=" 0.00000000  0.00000000  0.00000000" /> 
@@ -136,7 +154,10 @@
             <geometry> 
                 <mesh filename="package://human_control/description/model_generic/stl/talus.stl" scale=" 1.00000000  1.00000000  1.00000000"/> 
             </geometry> 
-        </visual> 
+        <material name="">
+		<color rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+	</material>
+	</visual> 
  
         <collision name="talus"> 
             <origin xyz="-0.00168721  0.00594951  0.00035094" rpy=" 0.00000000  0.00000000  0.00000000" /> 
@@ -160,7 +181,10 @@
             <geometry> 
                 <mesh filename="package://human_control/description/model_generic/stl/foot.stl" scale=" 1.00000000  1.00000000  1.00000000"/> 
             </geometry> 
-        </visual> 
+        <material name="">
+		<color rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+	</material>
+	</visual> 
  
         <collision name="foot"> 
             <origin xyz="-0.00432009  0.07068449  0.01758767" rpy=" 0.00000000  0.00000000  0.00000000" /> 
@@ -184,7 +208,10 @@
             <geometry> 
                 <mesh filename="package://human_control/description/model_generic/stl/bofoot.stl" scale=" 1.00000000  1.00000000  1.00000000"/> 
             </geometry> 
-        </visual> 
+        <material name="">
+		<color rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+	</material>
+	</visual> 
  
         <collision name="bofoot"> 
             <origin xyz="-0.00004618  0.02500000 -0.00304539" rpy=" 0.00000000  0.00000000  0.00000000" /> 
@@ -208,7 +235,10 @@
             <geometry> 
                 <mesh filename="package://human_control/description/model_generic/stl/femur_l.stl" scale=" 1.00000000  1.00000000  1.00000000"/> 
             </geometry> 
-        </visual> 
+        <material name="">
+		<color rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+	</material>
+	</visual> 
  
         <collision name="femur_l"> 
             <origin xyz="-0.01594298  0.00497468 -0.20699715" rpy=" 0.00000000  0.00000000  0.00000000" /> 
@@ -232,7 +262,10 @@
             <geometry> 
                 <mesh filename="package://human_control/description/model_generic/stl/tibia_l.stl" scale=" 1.00000000  1.00000000  1.00000000"/> 
             </geometry> 
-        </visual> 
+        <material name="">
+		<color rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+	</material>
+	</visual> 
  
         <collision name="tibia_l"> 
             <origin xyz=" 0.00346711  0.00744511 -0.18540446" rpy=" 0.00000000  0.00000000  0.00000000" /> 
@@ -246,7 +279,10 @@
             <geometry> 
                 <mesh filename="package://human_control/description/model_generic/stl/l_fibula.stl" scale=" 1.00000000  1.00000000  1.00000000"/> 
             </geometry> 
-        </visual> 
+        <material name="">
+		<color rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+	</material>
+	</visual> 
  
         <collision name="l_fibula"> 
             <origin xyz="-0.03035371 -0.00401039 -0.23035097" rpy=" 0.00000000  0.00000000  0.00000000" /> 
@@ -270,7 +306,10 @@
             <geometry> 
                 <mesh filename="package://human_control/description/model_generic/stl/l_talus.stl" scale=" 1.00000000  1.00000000  1.00000000"/> 
             </geometry> 
-        </visual> 
+        <material name="">
+		<color rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+	</material>
+	</visual> 
  
         <collision name="l_talus"> 
             <origin xyz=" 0.00168721  0.00594951  0.00035094" rpy=" 0.00000000  0.00000000  0.00000000" /> 
@@ -294,7 +333,10 @@
             <geometry> 
                 <mesh filename="package://human_control/description/model_generic/stl/l_foot.stl" scale=" 1.00000000  1.00000000  1.00000000"/> 
             </geometry> 
-        </visual> 
+        <material name="">
+		<color rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+	</material>
+	</visual> 
  
         <collision name="l_foot"> 
             <origin xyz=" 0.00432009  0.07068449  0.01758767" rpy=" 0.00000000  0.00000000  0.00000000" /> 
@@ -318,7 +360,10 @@
             <geometry> 
                 <mesh filename="package://human_control/description/model_generic/stl/l_bofoot.stl" scale=" 1.00000000  1.00000000  1.00000000"/> 
             </geometry> 
-        </visual> 
+        <material name="">
+		<color rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+	</material>
+	</visual> 
  
         <collision name="l_bofoot"> 
             <origin xyz="-0.00073217  0.02228543 -0.00115883" rpy=" 0.00000000  0.00000000  0.00000000" /> 
@@ -342,7 +387,10 @@
             <geometry> 
                 <mesh filename="package://human_control/description/model_generic/stl/hat_spine.stl" scale=" 1.00000000  1.00000000  1.00000000"/> 
             </geometry> 
-        </visual> 
+        <material name="">
+		<color rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+	</material>
+	</visual> 
  
         <collision name="hat_spine"> 
             <origin xyz=" 0.00026260 -0.02663700  1.33389564" rpy=" 0.00000000  0.00000000  0.00000000" /> 
@@ -356,7 +404,10 @@
             <geometry> 
                 <mesh filename="package://human_control/description/model_generic/stl/hat_jaw.stl" scale=" 1.00000000  1.00000000  1.00000000"/> 
             </geometry> 
-        </visual> 
+        <material name="">
+		<color rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+	</material>
+	</visual> 
  
         <collision name="hat_jaw"> 
             <origin xyz=" 0.00048531  0.04467935  0.49166154" rpy=" 0.00000000  0.00000000  0.00000000" /> 
@@ -370,7 +421,10 @@
             <geometry> 
                 <mesh filename="package://human_control/description/model_generic/stl/hat_skull.stl" scale=" 1.00000000  1.00000000  1.00000000"/> 
             </geometry> 
-        </visual> 
+        <material name="">
+		<color rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+	</material>
+	</visual> 
  
         <collision name="hat_skull"> 
             <origin xyz="-0.00001850 -0.00029496  0.58343848" rpy=" 0.00000000  0.00000000  0.00000000" /> 
@@ -384,7 +438,10 @@
             <geometry> 
                 <mesh filename="package://human_control/description/model_generic/stl/hat_ribs.stl" scale=" 1.00000000  1.00000000  1.00000000"/> 
             </geometry> 
-        </visual> 
+        <material name="">
+		<color rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+	</material>
+	</visual> 
  
         <collision name="hat_ribs"> 
             <origin xyz=" 0.00017963  0.00801860  0.26094778" rpy=" 0.00000000  0.00000000  0.00000000" /> 
@@ -397,7 +454,7 @@
  
     <joint name="ground_pelvis" type="floating"> 
  
-        <origin xyz=" 0.00000000  0.00000000  0.00000000" rpy="0 0 0" /> 
+        <origin xyz=" 1.00000000  1.00000000  1.00000000" rpy="0 0 0" /> 
         <parent link="ground"/> 
         <child link="pelvis"/> 
     </joint> 

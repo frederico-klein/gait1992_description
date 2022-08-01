@@ -10,7 +10,7 @@
 
   <node name="rviz" pkg="rviz" type="rviz" args="-d $(find human_control)/rviz/human_control.rviz" />
 
-    <param name="robot_description" command="cat /catkin_opensim/src/human_control/description/model_generic/model_generic_aCol.urdf"/>
+    <param name="robot_description" command="cat /catkin_ws/src/human_control/description/model_generic/model_generic_aCol.urdf"/>
 
  
     <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" respawn="false" output="screen">
