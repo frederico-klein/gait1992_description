@@ -1,6 +1,6 @@
 # Human control
 
-Package created with [ospi2urdf]( https://gitlab.inria.fr/elandais/ospi2urdf)
+Package created with [ospi2urdf]( https://gitlab.inria.fr/elandais/ospi2urdf) which is itself based on the [ospi package](https://github.com/Gepetto/ospi).
 
 ## TODO:
 
