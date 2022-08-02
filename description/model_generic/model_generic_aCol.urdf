@@ -20,7 +20,7 @@
         <visual name="sacrum"> 
             <origin xyz=" 0.00000000  0.00000000  0.00000000" rpy=" 1.57079633 -0.00000000  1.57079633" /> 
             <geometry> 
-                <mesh filename="package://human_control/description/model_generic/stl/sacrum.stl" scale=" 1.00000000  1.00000000  1.00000000"/> 
+                <mesh filename="package://gait1992_description/description/model_generic/stl/sacrum.stl" scale=" 1.00000000  1.00000000  1.00000000"/> 
             </geometry> 
         <material name="">
 		<color rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
@@ -37,7 +37,7 @@
         <visual name="pelvis"> 
             <origin xyz=" 0.00000000  0.00000000  0.00000000" rpy=" 1.57079633 -0.00000000  1.57079633" /> 
             <geometry> 
-                <mesh filename="package://human_control/description/model_generic/stl/pelvis.stl" scale=" 1.00000000  1.00000000  1.00000000"/> 
+                <mesh filename="package://gait1992_description/description/model_generic/stl/pelvis.stl" scale=" 1.00000000  1.00000000  1.00000000"/> 
             </geometry> 
         <material name="">
 		<color rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
@@ -54,7 +54,7 @@
         <visual name="l_pelvis"> 
             <origin xyz=" 0.00000000  0.00000000  0.00000000" rpy=" 1.57079633 -0.00000000  1.57079633" /> 
             <geometry> 
-                <mesh filename="package://human_control/description/model_generic/stl/l_pelvis.stl" scale=" 1.00000000  1.00000000  1.00000000"/> 
+                <mesh filename="package://gait1992_description/description/model_generic/stl/l_pelvis.stl" scale=" 1.00000000  1.00000000  1.00000000"/> 
             </geometry> 
         <material name="">
 		<color rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
@@ -81,7 +81,7 @@
         <visual name="femur_r"> 
             <origin xyz=" 0.00000000  0.00000000  0.00000000" rpy=" 1.57079633 -0.00000000  1.57079633" /> 
             <geometry> 
-                <mesh filename="package://human_control/description/model_generic/stl/femur_r.stl" scale=" 1.00000000  1.00000000  1.00000000"/> 
+                <mesh filename="package://gait1992_description/description/model_generic/stl/femur_r.stl" scale=" 1.00000000  1.00000000  1.00000000"/> 
             </geometry> 
         <material name="">
 		<color rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
@@ -108,7 +108,7 @@
         <visual name="tibia_r"> 
             <origin xyz=" 0.00000000  0.00000000  0.00000000" rpy=" 1.57079633 -0.00000000  1.57079633" /> 
             <geometry> 
-                <mesh filename="package://human_control/description/model_generic/stl/tibia_r.stl" scale=" 1.00000000  1.00000000  1.00000000"/> 
+                <mesh filename="package://gait1992_description/description/model_generic/stl/tibia_r.stl" scale=" 1.00000000  1.00000000  1.00000000"/> 
             </geometry> 
         <material name="">
 		<color rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
@@ -125,7 +125,7 @@
         <visual name="fibula"> 
             <origin xyz=" 0.00000000  0.00000000  0.00000000" rpy=" 1.57079633 -0.00000000  1.57079633" /> 
             <geometry> 
-                <mesh filename="package://human_control/description/model_generic/stl/fibula.stl" scale=" 1.00000000  1.00000000  1.00000000"/> 
+                <mesh filename="package://gait1992_description/description/model_generic/stl/fibula.stl" scale=" 1.00000000  1.00000000  1.00000000"/> 
             </geometry> 
         <material name="">
 		<color rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
@@ -152,7 +152,7 @@
         <visual name="talus"> 
             <origin xyz=" 0.00000000  0.00000000  0.00000000" rpy=" 1.57079633 -0.00000000  1.57079633" /> 
             <geometry> 
-                <mesh filename="package://human_control/description/model_generic/stl/talus.stl" scale=" 1.00000000  1.00000000  1.00000000"/> 
+                <mesh filename="package://gait1992_description/description/model_generic/stl/talus.stl" scale=" 1.00000000  1.00000000  1.00000000"/> 
             </geometry> 
         <material name="">
 		<color rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
@@ -179,7 +179,7 @@
         <visual name="foot"> 
             <origin xyz=" 0.00000000  0.00000000  0.00000000" rpy=" 1.57079633 -0.00000000  1.57079633" /> 
             <geometry> 
-                <mesh filename="package://human_control/description/model_generic/stl/foot.stl" scale=" 1.00000000  1.00000000  1.00000000"/> 
+                <mesh filename="package://gait1992_description/description/model_generic/stl/foot.stl" scale=" 1.00000000  1.00000000  1.00000000"/> 
             </geometry> 
         <material name="">
 		<color rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
@@ -206,7 +206,7 @@
         <visual name="bofoot"> 
             <origin xyz=" 0.00000000  0.00000000  0.00000000" rpy=" 1.57079633 -0.00000000  1.57079633" /> 
             <geometry> 
-                <mesh filename="package://human_control/description/model_generic/stl/bofoot.stl" scale=" 1.00000000  1.00000000  1.00000000"/> 
+                <mesh filename="package://gait1992_description/description/model_generic/stl/bofoot.stl" scale=" 1.00000000  1.00000000  1.00000000"/> 
             </geometry> 
         <material name="">
 		<color rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
@@ -233,7 +233,7 @@
         <visual name="femur_l"> 
             <origin xyz=" 0.00000000  0.00000000  0.00000000" rpy=" 1.57079633 -0.00000000  1.57079633" /> 
             <geometry> 
-                <mesh filename="package://human_control/description/model_generic/stl/femur_l.stl" scale=" 1.00000000  1.00000000  1.00000000"/> 
+                <mesh filename="package://gait1992_description/description/model_generic/stl/femur_l.stl" scale=" 1.00000000  1.00000000  1.00000000"/> 
             </geometry> 
         <material name="">
 		<color rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
@@ -260,7 +260,7 @@
         <visual name="tibia_l"> 
             <origin xyz=" 0.00000000  0.00000000  0.00000000" rpy=" 1.57079633 -0.00000000  1.57079633" /> 
             <geometry> 
-                <mesh filename="package://human_control/description/model_generic/stl/tibia_l.stl" scale=" 1.00000000  1.00000000  1.00000000"/> 
+                <mesh filename="package://gait1992_description/description/model_generic/stl/tibia_l.stl" scale=" 1.00000000  1.00000000  1.00000000"/> 
             </geometry> 
         <material name="">
 		<color rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
@@ -277,7 +277,7 @@
         <visual name="l_fibula"> 
             <origin xyz=" 0.00000000  0.00000000  0.00000000" rpy=" 1.57079633 -0.00000000  1.57079633" /> 
             <geometry> 
-                <mesh filename="package://human_control/description/model_generic/stl/l_fibula.stl" scale=" 1.00000000  1.00000000  1.00000000"/> 
+                <mesh filename="package://gait1992_description/description/model_generic/stl/l_fibula.stl" scale=" 1.00000000  1.00000000  1.00000000"/> 
             </geometry> 
         <material name="">
 		<color rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
@@ -304,7 +304,7 @@
         <visual name="l_talus"> 
             <origin xyz=" 0.00000000  0.00000000  0.00000000" rpy=" 1.57079633 -0.00000000  1.57079633" /> 
             <geometry> 
-                <mesh filename="package://human_control/description/model_generic/stl/l_talus.stl" scale=" 1.00000000  1.00000000  1.00000000"/> 
+                <mesh filename="package://gait1992_description/description/model_generic/stl/l_talus.stl" scale=" 1.00000000  1.00000000  1.00000000"/> 
             </geometry> 
         <material name="">
 		<color rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
@@ -331,7 +331,7 @@
         <visual name="l_foot"> 
             <origin xyz=" 0.00000000  0.00000000  0.00000000" rpy=" 1.57079633 -0.00000000  1.57079633" /> 
             <geometry> 
-                <mesh filename="package://human_control/description/model_generic/stl/l_foot.stl" scale=" 1.00000000  1.00000000  1.00000000"/> 
+                <mesh filename="package://gait1992_description/description/model_generic/stl/l_foot.stl" scale=" 1.00000000  1.00000000  1.00000000"/> 
             </geometry> 
         <material name="">
 		<color rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
@@ -358,7 +358,7 @@
         <visual name="l_bofoot"> 
             <origin xyz=" 0.00000000  0.00000000  0.00000000" rpy=" 1.57079633 -0.00000000  1.57079633" /> 
             <geometry> 
-                <mesh filename="package://human_control/description/model_generic/stl/l_bofoot.stl" scale=" 1.00000000  1.00000000  1.00000000"/> 
+                <mesh filename="package://gait1992_description/description/model_generic/stl/l_bofoot.stl" scale=" 1.00000000  1.00000000  1.00000000"/> 
             </geometry> 
         <material name="">
 		<color rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
@@ -385,7 +385,7 @@
         <visual name="hat_spine"> 
             <origin xyz=" 0.00000000  0.00000000  0.00000000" rpy=" 1.57079633 -0.00000000  1.57079633" /> 
             <geometry> 
-                <mesh filename="package://human_control/description/model_generic/stl/hat_spine.stl" scale=" 1.00000000  1.00000000  1.00000000"/> 
+                <mesh filename="package://gait1992_description/description/model_generic/stl/hat_spine.stl" scale=" 1.00000000  1.00000000  1.00000000"/> 
             </geometry> 
         <material name="">
 		<color rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
@@ -402,7 +402,7 @@
         <visual name="hat_jaw"> 
             <origin xyz=" 0.00000000  0.00000000  0.00000000" rpy=" 1.57079633 -0.00000000  1.57079633" /> 
             <geometry> 
-                <mesh filename="package://human_control/description/model_generic/stl/hat_jaw.stl" scale=" 1.00000000  1.00000000  1.00000000"/> 
+                <mesh filename="package://gait1992_description/description/model_generic/stl/hat_jaw.stl" scale=" 1.00000000  1.00000000  1.00000000"/> 
             </geometry> 
         <material name="">
 		<color rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
@@ -419,7 +419,7 @@
         <visual name="hat_skull"> 
             <origin xyz=" 0.00000000  0.00000000  0.00000000" rpy=" 1.57079633 -0.00000000  1.57079633" /> 
             <geometry> 
-                <mesh filename="package://human_control/description/model_generic/stl/hat_skull.stl" scale=" 1.00000000  1.00000000  1.00000000"/> 
+                <mesh filename="package://gait1992_description/description/model_generic/stl/hat_skull.stl" scale=" 1.00000000  1.00000000  1.00000000"/> 
             </geometry> 
         <material name="">
 		<color rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
@@ -436,7 +436,7 @@
         <visual name="hat_ribs"> 
             <origin xyz=" 0.00000000  0.00000000  0.00000000" rpy=" 1.57079633 -0.00000000  1.57079633" /> 
             <geometry> 
-                <mesh filename="package://human_control/description/model_generic/stl/hat_ribs.stl" scale=" 1.00000000  1.00000000  1.00000000"/> 
+                <mesh filename="package://gait1992_description/description/model_generic/stl/hat_ribs.stl" scale=" 1.00000000  1.00000000  1.00000000"/> 
             </geometry> 
         <material name="">
 		<color rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
