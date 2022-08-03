@@ -10,7 +10,7 @@ Package created with [ospi2urdf]( https://gitlab.inria.fr/elandais/ospi2urdf) wh
 
 - Migrate gait1992 osim model here and make sure that opensimrt_core looks here for the model instead.
 - Read relevant parameters from model and update them in the visualization. 
-
+- change the fixed paths in launch file to relative ones
 
 
 
