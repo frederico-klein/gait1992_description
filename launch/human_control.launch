@@ -8,11 +8,11 @@
     <arg name="debug" value="false"/>
   </include>-->
 
-  <node name="rviz" pkg="rviz" type="rviz" args="-d $(find human_control)/rviz/human_control.rviz" />
+  <node name="rviz" pkg="rviz" type="rviz" args="-d $(find gait1992_description)/rviz/gait1992_description.rviz" />
 
-    <param name="robot_description" command="cat /catkin_opensim/src/human_control/description/model_generic/model_generic_aCol.urdf"/>
+    <param name="robot_description" command="cat /catkin_ws/src/gait1992_description/description/model_generic/model_generic_aCol.urdf"/>
 
-    <rosparam file="/catkin_opensim/src/human_control/config/model_generic_control.yaml" command="load"/>
+    <rosparam file="/catkin_ws/src/gait1992_description/config/model_generic_control.yaml" command="load"/>
  
     <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" respawn="false" output="screen">
         <remap from="/joint_states" to="/model_generic/joint_states" />
@@ -25,7 +25,7 @@
 
     <node name="controller_spawner" pkg="controller_manager" type="spawner" respawn="false" output="screen" ns="/model_generic" args="hip_r_RX_position_controller hip_r_RY_position_controller hip_r_RZ_position_controller knee_r_RX_position_controller knee_r_RZ_position_controller knee_r_RY_position_controller ankle_r_position_controller hip_l_RX_position_controller hip_l_RY_position_controller hip_l_RZ_position_controller knee_l_RX_position_controller knee_l_RZ_position_controller knee_l_RY_position_controller ankle_l_position_controller back_RX_position_controller back_RY_position_controller back_RZ_position_controller  joint_state_controller"/>
 
-    <node name="spawn_urdf" pkg="gazebo_ros" type="spawn_model" args="-file /catkin_opensim/src/human_control/description/model_generic/model_generic_aCol.urdf -urdf -x 0 -y 0 -z 2 -model model_generic" />
+    <node name="spawn_urdf" pkg="gazebo_ros" type="spawn_model" args="-file /catkin_ws/src/gait1992_description/description/model_generic/model_generic_aCol.urdf -urdf -x 0 -y 0 -z 2 -model model_generic" />
 
     <node pkg="tf" type="static_transform_publisher" name="ground_pelvis" args=" 0.00000000  0.00000000  0.00000000 0 0 0 ground pelvis 1" />
 
