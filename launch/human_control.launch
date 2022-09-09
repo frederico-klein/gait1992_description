@@ -10,11 +10,9 @@
 
   <node name="rviz" pkg="rviz" type="rviz" args="-d $(find gait1992_description)/rviz/gait1992_description.rviz" />
 
-    <param name="robot_description" command="cat /catkin_ws/src/gait1992_description/description/model_generic/model_generic_aCol.urdf"/>
+    <param name="human_description" command="cat /catkin_ws/src/gait1992_description/description/model_generic/model_generic_aCol.urdf"/>
 
-    <rosparam file="/catkin_ws/src/gait1992_description/config/model_generic_control.yaml" command="load"/>
- 
-    <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" respawn="false" output="screen">
+    <node name="human_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" respawn="false" output="screen">
         <remap from="/joint_states" to="/model_generic/joint_states" />
     </node>
 
