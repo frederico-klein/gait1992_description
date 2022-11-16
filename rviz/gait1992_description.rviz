@@ -11,7 +11,7 @@ Panels:
         - /RobotModel1/Links1
         - /RobotModel1/Links1/torso1
       Splitter Ratio: 0.5
-    Tree Height: 736
+    Tree Height: 763
   - Class: rviz/Selection
     Name: Selection
   - Class: rviz/Tool Properties
@@ -176,11 +176,136 @@ Visualization Manager:
       Update Interval: 0
       Value: true
       Visual Enabled: true
+    - Class: rviz/TF
+      Enabled: true
+      Frame Timeout: 15
+      Frames:
+        All Enabled: true
+        calcn_l:
+          Value: true
+        calcn_r:
+          Value: true
+        femur_l:
+          Value: true
+        femur_l_f1:
+          Value: true
+        femur_l_f2:
+          Value: true
+        femur_r:
+          Value: true
+        femur_r_f1:
+          Value: true
+        femur_r_f2:
+          Value: true
+        ground:
+          Value: true
+        imu/femur_l:
+          Value: true
+        imu/femur_r:
+          Value: true
+        imu/pelvis:
+          Value: true
+        imu/talus_l:
+          Value: true
+        imu/talus_r:
+          Value: true
+        imu/tibia_l:
+          Value: true
+        imu/tibia_r:
+          Value: true
+        imu/torso:
+          Value: true
+        map:
+          Value: true
+        pelvis:
+          Value: true
+        talus_l:
+          Value: true
+        talus_r:
+          Value: true
+        tibia_l:
+          Value: true
+        tibia_l_f1:
+          Value: true
+        tibia_l_f2:
+          Value: true
+        tibia_r:
+          Value: true
+        tibia_r_f1:
+          Value: true
+        tibia_r_f2:
+          Value: true
+        toes_l:
+          Value: true
+        toes_r:
+          Value: true
+        torso:
+          Value: true
+        torso_f1:
+          Value: true
+        torso_f2:
+          Value: true
+        usb_cam_acer:
+          Value: true
+      Marker Alpha: 1
+      Marker Scale: 1
+      Name: TF
+      Show Arrows: true
+      Show Axes: true
+      Show Names: true
+      Tree:
+        ground:
+          pelvis:
+            femur_l_f1:
+              femur_l_f2:
+                femur_l:
+                  tibia_l_f1:
+                    tibia_l_f2:
+                      tibia_l:
+                        talus_l:
+                          calcn_l:
+                            toes_l:
+                              {}
+            femur_r_f1:
+              femur_r_f2:
+                femur_r:
+                  tibia_r_f1:
+                    tibia_r_f2:
+                      tibia_r:
+                        talus_r:
+                          calcn_r:
+                            toes_r:
+                              {}
+            torso_f1:
+              torso_f2:
+                torso:
+                  {}
+        map:
+          imu/femur_l:
+            {}
+          imu/femur_r:
+            {}
+          imu/pelvis:
+            {}
+          imu/talus_l:
+            {}
+          imu/talus_r:
+            {}
+          imu/tibia_l:
+            {}
+          imu/tibia_r:
+            {}
+          imu/torso:
+            {}
+          usb_cam_acer:
+            {}
+      Update Interval: 0
+      Value: true
   Enabled: true
   Global Options:
     Background Color: 48; 48; 48
     Default Light: true
-    Fixed Frame: ground
+    Fixed Frame: map
     Frame Rate: 100
   Name: root
   Tools:
@@ -220,17 +345,17 @@ Visualization Manager:
       Invert Z Axis: false
       Name: Current View
       Near Clip Distance: 0.009999999776482582
-      Pitch: 0.3103986978530884
+      Pitch: 0.0453987680375576
       Target Frame: <Fixed Frame>
-      Yaw: 0.9453967809677124
+      Yaw: 1.735398530960083
     Saved: ~
 Window Geometry:
   Displays:
     collapsed: false
-  Height: 1027
+  Height: 1054
   Hide Left Dock: false
   Hide Right Dock: false
-  QMainWindow State: 000000ff00000000fd0000000400000000000001d500000369fc0200000008fb0000001200530065006c0065006300740069006f006e00000001e10000009b0000005c00fffffffb0000001e0054006f006f006c002000500072006f007000650072007400690065007302000001ed000001df00000185000000a3fb000000120056006900650077007300200054006f006f02000001df000002110000018500000122fb000000200054006f006f006c002000500072006f0070006500720074006900650073003203000002880000011d000002210000017afb000000100044006900730070006c006100790073010000003b00000369000000c700fffffffb0000002000730065006c0065006300740069006f006e00200062007500660066006500720200000138000000aa0000023a00000294fb00000014005700690064006500530074006500720065006f02000000e6000000d2000003ee0000030bfb0000000c004b0069006e0065006300740200000186000001060000030c00000261000000010000010f00000369fc0200000003fb0000001e0054006f006f006c002000500072006f00700065007200740069006500730100000041000000780000000000000000fb0000000a00560069006500770073010000003b00000369000000a000fffffffb0000001200530065006c0065006300740069006f006e010000025a000000b200000000000000000000000200000490000000a9fc0100000001fb0000000a00560069006500770073030000004e00000080000002e10000019700000003000007800000003efc0100000002fb0000000800540069006d00650100000000000007800000024400fffffffb0000000800540069006d00650100000000000004500000000000000000000004900000036900000004000000040000000800000008fc0000000100000002000000010000000a0054006f006f006c00730100000000ffffffff0000000000000000
+  QMainWindow State: 000000ff00000000fd00000004000000000000026b00000384fc0200000008fb0000001200530065006c0065006300740069006f006e00000001e10000009b0000005c00fffffffb0000001e0054006f006f006c002000500072006f007000650072007400690065007302000001ed000001df00000185000000a3fb000000120056006900650077007300200054006f006f02000001df000002110000018500000122fb000000200054006f006f006c002000500072006f0070006500720074006900650073003203000002880000011d000002210000017afb000000100044006900730070006c006100790073010000003b00000384000000c700fffffffb0000002000730065006c0065006300740069006f006e00200062007500660066006500720200000138000000aa0000023a00000294fb00000014005700690064006500530074006500720065006f02000000e6000000d2000003ee0000030bfb0000000c004b0069006e0065006300740200000186000001060000030c00000261000000010000010f00000384fc0200000003fb0000001e0054006f006f006c002000500072006f00700065007200740069006500730100000041000000780000000000000000fb0000000a00560069006500770073010000003b00000384000000a000fffffffb0000001200530065006c0065006300740069006f006e010000025a000000b200000000000000000000000200000490000000a9fc0100000001fb0000000a00560069006500770073030000004e00000080000002e10000019700000003000007800000003efc0100000002fb0000000800540069006d00650100000000000007800000024400fffffffb0000000800540069006d00650100000000000004500000000000000000000003fa0000038400000004000000040000000800000008fc0000000100000002000000010000000a0054006f006f006c00730100000000ffffffff0000000000000000
   Selection:
     collapsed: false
   Time:
@@ -241,4 +366,4 @@ Window Geometry:
     collapsed: false
   Width: 1920
   X: 0
-  Y: 27
+  Y: 0
