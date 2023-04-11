@@ -1,0 +1,949 @@
+<?xml version="1.0" ?>
+
+<robot name="model_generic" xmlns:xacro="http://www.ros.org/wiki/xacro"> 
+	<xacro:macro name="a_human" params="parent">
+		<gazebo>
+			<plugin name="gazebo_ros_control" filename="libgazebo_ros_control.so">
+				<robotNamespace>/model_generic</robotNamespace>
+			</plugin>
+		</gazebo>
+
+		<link name="${parent}" /> 
+
+		<link name="pelvis"> 
+
+			<inertial> 
+				<mass value="11.777"/> 
+				<origin xyz="-0.00000000 -0.07070000  0.00000000" rpy="0 0 0" /> 
+				<inertia ixx="0.1028" iyy="0.0871" izz="0.0579" ixy="0.0" ixz="0.0" iyz="0.0"/> 
+			</inertial> 
+
+			<visual name="sacrum"> 
+				<origin xyz=" 0.00000000  0.00000000  0.00000000" rpy=" 1.57079633 -0.00000000  1.57079633" /> 
+				<geometry> 
+					<mesh filename="package://gait1992_description/description/model_generic/stl/sacrum.stl" scale=" 1.00000000  1.00000000  1.00000000"/> 
+				</geometry> 
+				<material name="">
+					<color rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+				</material>
+			</visual> 
+
+			<collision name="sacrum"> 
+				<origin xyz=" 0.00000889 -0.12485057  0.03677944" rpy=" 0.00000000  0.00000000  0.00000000" /> 
+				<geometry> 
+					<sphere radius="0.0528053343296051" /> 
+				</geometry> 
+			</collision> 
+
+			<visual name="pelvis"> 
+				<origin xyz=" 0.00000000  0.00000000  0.00000000" rpy=" 1.57079633 -0.00000000  1.57079633" /> 
+				<geometry> 
+					<mesh filename="package://gait1992_description/description/model_generic/stl/pelvis.stl" scale=" 1.00000000  1.00000000  1.00000000"/> 
+				</geometry> 
+				<material name="">
+					<color rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+				</material>
+			</visual> 
+
+			<collision name="pelvis"> 
+				<origin xyz=" 0.07386850 -0.07562926 -0.00743482" rpy=" 0.00000000  0.00000000  0.00000000" /> 
+				<geometry> 
+					<cylinder radius="0.06901049613952637" length="0.21470201" /> 
+				</geometry> 
+			</collision> 
+
+			<visual name="l_pelvis"> 
+				<origin xyz=" 0.00000000  0.00000000  0.00000000" rpy=" 1.57079633 -0.00000000  1.57079633" /> 
+				<geometry> 
+					<mesh filename="package://gait1992_description/description/model_generic/stl/l_pelvis.stl" scale=" 1.00000000  1.00000000  1.00000000"/> 
+				</geometry> 
+				<material name="">
+					<color rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+				</material>
+			</visual> 
+
+			<collision name="l_pelvis"> 
+				<origin xyz="-0.07386850 -0.07562925 -0.00743482" rpy=" 0.00000000  0.00000000  0.00000000" /> 
+				<geometry> 
+					<cylinder radius="0.06901049613952637" length="0.21470201" /> 
+				</geometry> 
+			</collision> 
+
+		</link> 
+
+		<link name="femur_r"> 
+
+			<inertial> 
+				<mass value="9.3014"/> 
+				<origin xyz=" 0.00000000 -0.00000000 -0.17000000" rpy="0 0 0" /> 
+				<inertia ixx="0.1339" iyy="0.0351" izz="0.1412" ixy="0.0" ixz="0.0" iyz="0.0"/> 
+			</inertial> 
+
+			<visual name="femur_r"> 
+				<origin xyz=" 0.00000000  0.00000000  0.00000000" rpy=" 1.57079633 -0.00000000  1.57079633" /> 
+				<geometry> 
+					<mesh filename="package://gait1992_description/description/model_generic/stl/femur_r.stl" scale=" 1.00000000  1.00000000  1.00000000"/> 
+				</geometry> 
+				<material name="">
+					<color rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+				</material>
+			</visual> 
+
+			<collision name="femur_r"> 
+				<origin xyz=" 0.01594298  0.00497468 -0.20699716" rpy=" 0.00000000  0.00000000  0.00000000" /> 
+				<geometry> 
+					<cylinder radius="0.043163001537323" length="0.452616" /> 
+				</geometry> 
+			</collision> 
+
+		</link> 
+
+		<link name="tibia_r"> 
+
+			<inertial> 
+				<mass value="3.7075"/> 
+				<origin xyz=" 0.00000000 -0.00000000 -0.18670000" rpy="0 0 0" /> 
+				<inertia ixx="0.0504" iyy="0.0051" izz="0.0511" ixy="0.0" ixz="0.0" iyz="0.0"/> 
+			</inertial> 
+
+			<visual name="tibia_r"> 
+				<origin xyz=" 0.00000000  0.00000000  0.00000000" rpy=" 1.57079633 -0.00000000  1.57079633" /> 
+				<geometry> 
+					<mesh filename="package://gait1992_description/description/model_generic/stl/tibia_r.stl" scale=" 1.00000000  1.00000000  1.00000000"/> 
+				</geometry> 
+				<material name="">
+					<color rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+				</material>
+			</visual> 
+
+			<collision name="tibia_r"> 
+				<origin xyz="-0.00346711  0.00744511 -0.18540447" rpy=" 0.00000000  0.00000000  0.00000000" /> 
+				<geometry> 
+					<cylinder radius="0.034585751593112946" length="0.386749" /> 
+				</geometry> 
+			</collision> 
+
+			<visual name="fibula"> 
+				<origin xyz=" 0.00000000  0.00000000  0.00000000" rpy=" 1.57079633 -0.00000000  1.57079633" /> 
+				<geometry> 
+					<mesh filename="package://gait1992_description/description/model_generic/stl/fibula.stl" scale=" 1.00000000  1.00000000  1.00000000"/> 
+				</geometry> 
+				<material name="">
+					<color rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+				</material>
+			</visual> 
+
+			<collision name="fibula"> 
+				<origin xyz=" 0.03035371 -0.00401039 -0.23035097" rpy=" 0.00000000  0.00000000  0.00000000" /> 
+				<geometry> 
+					<cylinder radius="0.014540750533342361" length="0.375208" /> 
+				</geometry> 
+			</collision> 
+
+		</link> 
+
+		<link name="talus_r"> 
+
+			<inertial> 
+				<mass value="0.1"/> 
+				<origin xyz=" 0.00000000  0.00000000  0.00000000" rpy="0 0 0" /> 
+				<inertia ixx="0.001" iyy="0.001" izz="0.001" ixy="0.0" ixz="0.0" iyz="0.0"/> 
+			</inertial> 
+
+			<visual name="talus"> 
+				<origin xyz=" 0.00000000  0.00000000  0.00000000" rpy=" 1.57079633 -0.00000000  1.57079633" /> 
+				<geometry> 
+					<mesh filename="package://gait1992_description/description/model_generic/stl/talus.stl" scale=" 1.00000000  1.00000000  1.00000000"/> 
+				</geometry> 
+				<material name="">
+					<color rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+				</material>
+			</visual> 
+
+			<collision name="talus"> 
+				<origin xyz="-0.00168721  0.00594951  0.00035094" rpy=" 0.00000000  0.00000000  0.00000000" /> 
+				<geometry> 
+					<box size=" 0.0416  0.0458  0.0301" /> 
+				</geometry> 
+			</collision> 
+
+		</link> 
+
+		<link name="calcn_r"> 
+
+			<inertial> 
+				<mass value="1.25"/> 
+				<origin xyz=" 0.00000000  0.10000000  0.03000000" rpy="0 0 0" /> 
+				<inertia ixx="0.0014" iyy="0.0039" izz="0.0041" ixy="0.0" ixz="0.0" iyz="0.0"/> 
+			</inertial> 
+
+			<visual name="foot"> 
+				<origin xyz=" 0.00000000  0.00000000  0.00000000" rpy=" 1.57079633 -0.00000000  1.57079633" /> 
+				<geometry> 
+					<mesh filename="package://gait1992_description/description/model_generic/stl/foot.stl" scale=" 1.00000000  1.00000000  1.00000000"/> 
+				</geometry> 
+				<material name="">
+					<color rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+				</material>
+			</visual> 
+
+			<collision name="foot"> 
+				<origin xyz="-0.00432009  0.07068449  0.01758767" rpy=" 0.00000000  0.00000000  0.00000000" /> 
+				<geometry> 
+					<box size=" 0.0849  0.1927  0.0529" /> 
+				</geometry> 
+			</collision> 
+
+		</link> 
+
+		<link name="toes_r"> 
+
+			<inertial> 
+				<mass value="0.2166"/> 
+				<origin xyz="-0.01750000  0.03460000  0.00600000" rpy="0 0 0" /> 
+				<inertia ixx="0.0001" iyy="0.0002" izz="0.0001" ixy="0.0" ixz="0.0" iyz="0.0"/> 
+			</inertial> 
+
+			<visual name="bofoot"> 
+				<origin xyz=" 0.00000000  0.00000000  0.00000000" rpy=" 1.57079633 -0.00000000  1.57079633" /> 
+				<geometry> 
+					<mesh filename="package://gait1992_description/description/model_generic/stl/bofoot.stl" scale=" 1.00000000  1.00000000  1.00000000"/> 
+				</geometry> 
+				<material name="">
+					<color rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+				</material>
+			</visual> 
+
+			<collision name="bofoot"> 
+				<origin xyz="-0.00004618  0.02500000 -0.00304539" rpy=" 0.00000000  0.00000000  0.00000000" /> 
+				<geometry> 
+					<cylinder radius="0.05094899982213974" length="0.018185" /> 
+				</geometry> 
+			</collision> 
+
+		</link> 
+
+		<link name="femur_l"> 
+
+			<inertial> 
+				<mass value="9.3014"/> 
+				<origin xyz=" 0.00000000 -0.00000000 -0.17000000" rpy="0 0 0" /> 
+				<inertia ixx="0.1339" iyy="0.0351" izz="0.1412" ixy="0.0" ixz="0.0" iyz="0.0"/> 
+			</inertial> 
+
+			<visual name="femur_l"> 
+				<origin xyz=" 0.00000000  0.00000000  0.00000000" rpy=" 1.57079633 -0.00000000  1.57079633" /> 
+				<geometry> 
+					<mesh filename="package://gait1992_description/description/model_generic/stl/femur_l.stl" scale=" 1.00000000  1.00000000  1.00000000"/> 
+				</geometry> 
+				<material name="">
+					<color rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+				</material>
+			</visual> 
+
+			<collision name="femur_l"> 
+				<origin xyz="-0.01594298  0.00497468 -0.20699715" rpy=" 0.00000000  0.00000000  0.00000000" /> 
+				<geometry> 
+					<cylinder radius="0.043163001537323" length="0.452616" /> 
+				</geometry> 
+			</collision> 
+
+		</link> 
+
+		<link name="tibia_l"> 
+
+			<inertial> 
+				<mass value="3.7075"/> 
+				<origin xyz=" 0.00000000 -0.00000000 -0.18670000" rpy="0 0 0" /> 
+				<inertia ixx="0.0504" iyy="0.0051" izz="0.0511" ixy="0.0" ixz="0.0" iyz="0.0"/> 
+			</inertial> 
+
+			<visual name="tibia_l"> 
+				<origin xyz=" 0.00000000  0.00000000  0.00000000" rpy=" 1.57079633 -0.00000000  1.57079633" /> 
+				<geometry> 
+					<mesh filename="package://gait1992_description/description/model_generic/stl/tibia_l.stl" scale=" 1.00000000  1.00000000  1.00000000"/> 
+				</geometry> 
+				<material name="">
+					<color rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+				</material>
+			</visual> 
+
+			<collision name="tibia_l"> 
+				<origin xyz=" 0.00346711  0.00744511 -0.18540446" rpy=" 0.00000000  0.00000000  0.00000000" /> 
+				<geometry> 
+					<cylinder radius="0.034585751593112946" length="0.386749" /> 
+				</geometry> 
+			</collision> 
+
+			<visual name="l_fibula"> 
+				<origin xyz=" 0.00000000  0.00000000  0.00000000" rpy=" 1.57079633 -0.00000000  1.57079633" /> 
+				<geometry> 
+					<mesh filename="package://gait1992_description/description/model_generic/stl/l_fibula.stl" scale=" 1.00000000  1.00000000  1.00000000"/> 
+				</geometry> 
+				<material name="">
+					<color rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+				</material>
+			</visual> 
+
+			<collision name="l_fibula"> 
+				<origin xyz="-0.03035371 -0.00401039 -0.23035097" rpy=" 0.00000000  0.00000000  0.00000000" /> 
+				<geometry> 
+					<cylinder radius="0.014540750533342361" length="0.375208" /> 
+				</geometry> 
+			</collision> 
+
+		</link> 
+
+		<link name="talus_l"> 
+
+			<inertial> 
+				<mass value="0.1"/> 
+				<origin xyz=" 0.00000000  0.00000000  0.00000000" rpy="0 0 0" /> 
+				<inertia ixx="0.001" iyy="0.001" izz="0.001" ixy="0.0" ixz="0.0" iyz="0.0"/> 
+			</inertial> 
+
+			<visual name="l_talus"> 
+				<origin xyz=" 0.00000000  0.00000000  0.00000000" rpy=" 1.57079633 -0.00000000  1.57079633" /> 
+				<geometry> 
+					<mesh filename="package://gait1992_description/description/model_generic/stl/l_talus.stl" scale=" 1.00000000  1.00000000  1.00000000"/> 
+				</geometry> 
+				<material name="">
+					<color rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+				</material>
+			</visual> 
+
+			<collision name="l_talus"> 
+				<origin xyz=" 0.00168721  0.00594951  0.00035094" rpy=" 0.00000000  0.00000000  0.00000000" /> 
+				<geometry> 
+					<box size=" 0.0416  0.0461  0.0301" /> 
+				</geometry> 
+			</collision> 
+
+		</link> 
+
+		<link name="calcn_l"> 
+
+			<inertial> 
+				<mass value="1.25"/> 
+				<origin xyz=" 0.00000000  0.10000000  0.03000000" rpy="0 0 0" /> 
+				<inertia ixx="0.0014" iyy="0.0039" izz="0.0041" ixy="0.0" ixz="0.0" iyz="0.0"/> 
+			</inertial> 
+
+			<visual name="l_foot"> 
+				<origin xyz=" 0.00000000  0.00000000  0.00000000" rpy=" 1.57079633 -0.00000000  1.57079633" /> 
+				<geometry> 
+					<mesh filename="package://gait1992_description/description/model_generic/stl/l_foot.stl" scale=" 1.00000000  1.00000000  1.00000000"/> 
+				</geometry> 
+				<material name="">
+					<color rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+				</material>
+			</visual> 
+
+			<collision name="l_foot"> 
+				<origin xyz=" 0.00432009  0.07068449  0.01758767" rpy=" 0.00000000  0.00000000  0.00000000" /> 
+				<geometry> 
+					<box size=" 0.0849  0.1936  0.0529" /> 
+				</geometry> 
+			</collision> 
+
+		</link> 
+
+		<link name="toes_l"> 
+
+			<inertial> 
+				<mass value="0.2166"/> 
+				<origin xyz=" 0.01750000  0.03460000  0.00600000" rpy="0 0 0" /> 
+				<inertia ixx="0.0001" iyy="0.0002" izz="0.0001" ixy="0.0" ixz="0.0" iyz="0.0"/> 
+			</inertial> 
+
+			<visual name="l_bofoot"> 
+				<origin xyz=" 0.00000000  0.00000000  0.00000000" rpy=" 1.57079633 -0.00000000  1.57079633" /> 
+				<geometry> 
+					<mesh filename="package://gait1992_description/description/model_generic/stl/l_bofoot.stl" scale=" 1.00000000  1.00000000  1.00000000"/> 
+				</geometry> 
+				<material name="">
+					<color rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+				</material>
+			</visual> 
+
+			<collision name="l_bofoot"> 
+				<origin xyz="-0.00073217  0.02228543 -0.00115883" rpy=" 0.00000000  0.00000000  0.00000000" /> 
+				<geometry> 
+					<cylinder radius="0.05118675157427788" length="0.018185" /> 
+				</geometry> 
+			</collision> 
+
+		</link> 
+
+		<link name="torso"> 
+
+			<inertial> 
+				<mass value="34.2366"/> 
+				<origin xyz="-0.00000000 -0.03000000  0.32000000" rpy="0 0 0" /> 
+				<inertia ixx="1.4745" iyy="0.7555" izz="1.4314" ixy="0.0" ixz="0.0" iyz="0.0"/> 
+			</inertial> 
+
+			<visual name="hat_spine"> 
+				<origin xyz=" 0.00000000  0.00000000  0.00000000" rpy=" 1.57079633 -0.00000000  1.57079633" /> 
+				<geometry> 
+					<mesh filename="package://gait1992_description/description/model_generic/stl/hat_spine.stl" scale=" 1.00000000  1.00000000  1.00000000"/> 
+				</geometry> 
+				<material name="">
+					<color rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+				</material>
+			</visual> 
+
+			<collision name="hat_spine"> 
+				<origin xyz=" 0.00026260 -0.02663700  0.2600133389564" rpy=" 0.00000000  0.00000000  0.00000000" /> 
+
+				<geometry> 
+					<box size=" 0.0751  0.1291  0.5249" /> 
+				</geometry> 
+			</collision> 
+
+			<visual name="hat_jaw"> 
+				<origin xyz=" 0.00000000  0.00000000  0.00000000" rpy=" 1.57079633 -0.00000000  1.57079633" /> 
+				<geometry> 
+					<mesh filename="package://gait1992_description/description/model_generic/stl/hat_jaw.stl" scale=" 1.00000000  1.00000000  1.00000000"/> 
+				</geometry> 
+				<material name="">
+					<color rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+				</material>
+			</visual> 
+
+			<collision name="hat_jaw"> 
+				<origin xyz=" 0.00048531  0.04467935  0.49166154" rpy=" 0.00000000  0.00000000  0.00000000" /> 
+				<geometry> 
+					<sphere radius="0.0445866696536541" /> 
+				</geometry> 
+			</collision> 
+
+			<visual name="hat_skull"> 
+				<origin xyz=" 0.00000000  0.00000000  0.00000000" rpy=" 1.57079633 -0.00000000  1.57079633" /> 
+				<geometry> 
+					<mesh filename="package://gait1992_description/description/model_generic/stl/hat_skull.stl" scale=" 1.00000000  1.00000000  1.00000000"/> 
+				</geometry> 
+				<material name="">
+					<color rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+				</material>
+			</visual> 
+
+			<collision name="hat_skull"> 
+				<origin xyz="-0.00001850 -0.00029496  0.58343848" rpy=" 0.00000000  0.00000000  0.00000000" /> 
+				<geometry> 
+					<sphere radius="0.07807634025812149" /> 
+				</geometry> 
+			</collision> 
+
+			<visual name="hat_ribs"> 
+				<origin xyz=" 0.00000000  0.00000000  0.00000000" rpy=" 1.57079633 -0.00000000  1.57079633" /> 
+				<geometry> 
+					<mesh filename="package://gait1992_description/description/model_generic/stl/hat_ribs.stl" scale=" 1.00000000  1.00000000  1.00000000"/> 
+				</geometry> 
+				<material name="">
+					<color rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+				</material>
+			</visual> 
+
+			<collision name="hat_ribs"> 
+				<origin xyz=" 0.00017963  0.00801860  0.26094778" rpy=" 0.00000000  0.00000000  0.00000000" /> 
+				<geometry> 
+					<box size=" 0.2758  0.1928  0.3097" /> 
+				</geometry> 
+			</collision> 
+
+		</link> 
+
+		<joint name="ground_pelvis" type="floating"> 
+
+			<origin xyz=" 1.00000000  1.00000000  1.00000000" rpy="0 0 0" /> 
+			<parent link="ground"/> 
+			<child link="pelvis"/> 
+		</joint> 
+
+		<link name="femur_r_f1"> 
+
+			<inertial>
+				<mass value="0.0001"/> 
+				<origin xyz=" 0.00000000  0.00000000  0.00000000" rpy="0 0 0" /> 
+				<inertia ixx="0.0003" iyy="0.0003" izz="0.0003" ixy="0.0" ixz="0.0" iyz="0.0"/> 
+			</inertial> 
+
+		</link> 
+
+		<joint name="hip_r_RX" type="revolute"> 
+
+			<origin xyz=" 0.08350000 -0.07070000 -0.06610000" rpy="0 0 0" /> 
+			<parent link="pelvis"/> 
+			<child link="femur_r_f1"/> 
+			<axis xyz=" 1.00000000  0.00000000  0.00000000"/> 
+			<limit effort="51.314990909090916" velocity="1.0" lower="-2.0943951" upper="2.0943951" /> 
+
+		</joint> 
+
+		<transmission name="trans_hip_r_RX">
+			<type>transmission_interface/SimpleTransmission</type>
+			<joint name="hip_r_RX">
+				<hardwareInterface>EffortJointInterface</hardwareInterface>
+			</joint>
+			<actuator name="motor_hip_r_RX">
+				<hardwareInterface>EffortJointInterface</hardwareInterface>
+				<mechanicalReduction>1</mechanicalReduction>
+			</actuator>
+		</transmission>
+
+		<link name="femur_r_f2"> 
+
+			<inertial>
+				<mass value="0.0001"/> 
+				<origin xyz=" 0.00000000  0.00000000  0.00000000" rpy="0 0 0" /> 
+				<inertia ixx="0.0003" iyy="0.0003" izz="0.0003" ixy="0.0" ixz="0.0" iyz="0.0"/> 
+			</inertial> 
+
+		</link> 
+
+		<joint name="hip_r_RY" type="revolute"> 
+
+			<origin xyz=" 0.00000000  0.00000000  0.00000000" rpy="0 0 0" /> 
+			<parent link="femur_r_f1"/> 
+			<child link="femur_r_f2"/> 
+			<axis xyz=" 0.00000000  1.00000000  0.00000000"/> 
+			<limit effort="23.648" velocity="1.0" lower="-2.0943951" upper="2.0943951" /> 
+
+		</joint> 
+
+		<transmission name="trans_hip_r_RY">
+			<type>transmission_interface/SimpleTransmission</type>
+			<joint name="hip_r_RY">
+				<hardwareInterface>EffortJointInterface</hardwareInterface>
+			</joint>
+			<actuator name="motor_hip_r_RY">
+				<hardwareInterface>EffortJointInterface</hardwareInterface>
+				<mechanicalReduction>1</mechanicalReduction>
+			</actuator>
+		</transmission>
+
+		<joint name="hip_r_RZ" type="revolute"> 
+
+			<origin xyz=" 0.00000000  0.00000000  0.00000000" rpy="0 0 0" /> 
+			<parent link="femur_r_f2"/> 
+			<child link="femur_r"/> 
+			<axis xyz=" 0.00000000  0.00000000  1.00000000"/> 
+			<limit effort="23.648" velocity="1.0" lower="-2.0943951" upper="2.0943951" /> 
+
+		</joint> 
+
+		<transmission name="trans_hip_r_RZ">
+			<type>transmission_interface/SimpleTransmission</type>
+			<joint name="hip_r_RZ">
+				<hardwareInterface>EffortJointInterface</hardwareInterface>
+			</joint>
+			<actuator name="motor_hip_r_RZ">
+				<hardwareInterface>EffortJointInterface</hardwareInterface>
+				<mechanicalReduction>1</mechanicalReduction>
+			</actuator>
+		</transmission>
+
+		<link name="tibia_r_f1"> 
+
+			<inertial>
+				<mass value="0.0001"/> 
+				<origin xyz=" 0.00000000  0.00000000  0.00000000" rpy="0 0 0" /> 
+				<inertia ixx="0.0003" iyy="0.0003" izz="0.0003" ixy="0.0" ixz="0.0" iyz="0.0"/> 
+			</inertial> 
+
+		</link> 
+
+		<joint name="knee_r_RX" type="revolute"> 
+
+			<origin xyz=" 0.0000000  0.0  -0.401500000000" rpy="0 0 0" /> 
+			<parent link="femur_r"/> 
+			<child link="tibia_r_f1"/> 
+			<axis xyz=" 1.00000000  0.00000000  0.00000000"/> 
+			<limit effort="80.78233333333333" velocity="1.0" lower="-2.0943951" upper="0.17453293" /> 
+
+		</joint> 
+
+		<transmission name="trans_knee_r_RX">
+			<type>transmission_interface/SimpleTransmission</type>
+			<joint name="knee_r_RX">
+				<hardwareInterface>EffortJointInterface</hardwareInterface>
+			</joint>
+			<actuator name="motor_knee_r_RX">
+				<hardwareInterface>EffortJointInterface</hardwareInterface>
+				<mechanicalReduction>1</mechanicalReduction>
+			</actuator>
+		</transmission>
+
+		<link name="tibia_r_f2"> 
+
+			<inertial>
+				<mass value="0.0001"/> 
+				<origin xyz=" 0.00000000  0.00000000  0.00000000" rpy="0 0 0" /> 
+				<inertia ixx="0.0003" iyy="0.0003" izz="0.0003" ixy="0.0" ixz="0.0" iyz="0.0"/> 
+			</inertial> 
+
+		</link> 
+
+		<joint name="knee_r_RZ" type="revolute"> 
+
+			<origin xyz=" 0.00000000  0.00000000  0.00000000" rpy="0 0 0" /> 
+			<parent link="tibia_r_f1"/> 
+			<child link="tibia_r_f2"/> 
+			<axis xyz=" 0.00000000  0.00000000  1.00000000"/> 
+			<limit effort="23.648" velocity="1.0" lower="-2.0943951" upper="0.17453293" /> 
+
+		</joint> 
+
+		<transmission name="trans_knee_r_RZ">
+			<type>transmission_interface/SimpleTransmission</type>
+			<joint name="knee_r_RZ">
+				<hardwareInterface>EffortJointInterface</hardwareInterface>
+			</joint>
+			<actuator name="motor_knee_r_RZ">
+				<hardwareInterface>EffortJointInterface</hardwareInterface>
+				<mechanicalReduction>1</mechanicalReduction>
+			</actuator>
+		</transmission>
+
+		<joint name="knee_r_RY" type="revolute"> 
+
+			<origin xyz=" 0.00000000  0.00000000  0.00000000" rpy="0 0 0" /> 
+			<parent link="tibia_r_f2"/> 
+			<child link="tibia_r"/> 
+			<axis xyz=" 0.00000000  1.00000000  0.00000000"/> 
+			<limit effort="23.648" velocity="1.0" lower="-2.0943951" upper="0.17453293" /> 
+
+		</joint> 
+
+		<transmission name="trans_knee_r_RY">
+			<type>transmission_interface/SimpleTransmission</type>
+			<joint name="knee_r_RY">
+				<hardwareInterface>EffortJointInterface</hardwareInterface>
+			</joint>
+			<actuator name="motor_knee_r_RY">
+				<hardwareInterface>EffortJointInterface</hardwareInterface>
+				<mechanicalReduction>1</mechanicalReduction>
+			</actuator>
+		</transmission>
+
+		<joint name="ankle_r" type="revolute"> 
+
+			<origin xyz=" 0.00000000 -0.00000000 -0.43000000" rpy="0 0 0" /> 
+			<parent link="tibia_r"/> 
+			<child link="talus_r"/> 
+			<axis xyz=" 0.97912632 -0.10501355 -0.17402245"/> 
+			<limit effort="23.648" velocity="1.0" lower="-1.57079633" upper="1.57079633" /> 
+
+		</joint> 
+
+		<transmission name="trans_ankle_r">
+			<type>transmission_interface/SimpleTransmission</type>
+			<joint name="ankle_r">
+				<hardwareInterface>EffortJointInterface</hardwareInterface>
+			</joint>
+			<actuator name="motor_ankle_r">
+				<hardwareInterface>EffortJointInterface</hardwareInterface>
+				<mechanicalReduction>1</mechanicalReduction>
+			</actuator>
+		</transmission>
+
+		<joint name="subtalar_r" type="floating"> 
+
+			<origin xyz=" 0.00792000 -0.04877000 -0.04195000" rpy="0 0 0" /> 
+			<parent link="talus_r"/> 
+			<child link="calcn_r"/> 
+		</joint> 
+
+		<joint name="mtp_r" type="floating"> 
+
+			<origin xyz=" 0.00108000  0.17880000 -0.00200000" rpy="0 0 0" /> 
+			<parent link="calcn_r"/> 
+			<child link="toes_r"/> 
+		</joint> 
+
+		<link name="femur_l_f1"> 
+
+			<inertial>
+				<mass value="0.0001"/> 
+				<origin xyz=" 0.00000000  0.00000000  0.00000000" rpy="0 0 0" /> 
+				<inertia ixx="0.0003" iyy="0.0003" izz="0.0003" ixy="0.0" ixz="0.0" iyz="0.0"/> 
+			</inertial> 
+
+		</link> 
+
+		<joint name="hip_l_RX" type="revolute"> 
+
+			<origin xyz="-0.08350000 -0.07070000 -0.06610000" rpy="0 0 0" /> 
+			<parent link="pelvis"/> 
+			<child link="femur_l_f1"/> 
+			<axis xyz=" 1.00000000  0.00000000  0.00000000"/> 
+			<limit effort="51.314990909090916" velocity="1.0" lower="-2.0943951" upper="2.0943951" /> 
+
+		</joint> 
+
+		<transmission name="trans_hip_l_RX">
+			<type>transmission_interface/SimpleTransmission</type>
+			<joint name="hip_l_RX">
+				<hardwareInterface>EffortJointInterface</hardwareInterface>
+			</joint>
+			<actuator name="motor_hip_l_RX">
+				<hardwareInterface>EffortJointInterface</hardwareInterface>
+				<mechanicalReduction>1</mechanicalReduction>
+			</actuator>
+		</transmission>
+
+		<link name="femur_l_f2"> 
+
+			<inertial>
+				<mass value="0.0001"/> 
+				<origin xyz=" 0.00000000  0.00000000  0.00000000" rpy="0 0 0" /> 
+				<inertia ixx="0.0003" iyy="0.0003" izz="0.0003" ixy="0.0" ixz="0.0" iyz="0.0"/> 
+			</inertial> 
+
+		</link> 
+
+		<joint name="hip_l_RY" type="revolute"> 
+
+			<origin xyz=" 0.00000000  0.00000000  0.00000000" rpy="0 0 0" /> 
+			<parent link="femur_l_f1"/> 
+			<child link="femur_l_f2"/> 
+			<axis xyz=" 0.00000000 -1.00000000  0.00000000"/> 
+			<limit effort="23.648" velocity="1.0" lower="-2.0943951" upper="2.0943951" /> 
+
+		</joint> 
+
+		<transmission name="trans_hip_l_RY">
+			<type>transmission_interface/SimpleTransmission</type>
+			<joint name="hip_l_RY">
+				<hardwareInterface>EffortJointInterface</hardwareInterface>
+			</joint>
+			<actuator name="motor_hip_l_RY">
+				<hardwareInterface>EffortJointInterface</hardwareInterface>
+				<mechanicalReduction>1</mechanicalReduction>
+			</actuator>
+		</transmission>
+
+		<joint name="hip_l_RZ" type="revolute"> 
+
+			<origin xyz=" 0.00000000  0.00000000  0.00000000" rpy="0 0 0" /> 
+			<parent link="femur_l_f2"/> 
+			<child link="femur_l"/> 
+			<axis xyz=" 0.00000000  0.00000000 -1.00000000"/> 
+			<limit effort="23.648" velocity="1.0" lower="-2.0943951" upper="2.0943951" /> 
+
+		</joint> 
+
+		<transmission name="trans_hip_l_RZ">
+			<type>transmission_interface/SimpleTransmission</type>
+			<joint name="hip_l_RZ">
+				<hardwareInterface>EffortJointInterface</hardwareInterface>
+			</joint>
+			<actuator name="motor_hip_l_RZ">
+				<hardwareInterface>EffortJointInterface</hardwareInterface>
+				<mechanicalReduction>1</mechanicalReduction>
+			</actuator>
+		</transmission>
+
+		<link name="tibia_l_f1"> 
+
+			<inertial>
+				<mass value="0.0001"/> 
+				<origin xyz=" 0.00000000  0.00000000  0.00000000" rpy="0 0 0" /> 
+				<inertia ixx="0.0003" iyy="0.0003" izz="0.0003" ixy="0.0" ixz="0.0" iyz="0.0"/> 
+			</inertial> 
+
+		</link> 
+
+		<joint name="knee_l_RX" type="revolute"> 
+
+			<origin xyz=" 0.00000000  0.00000000  -0.40150000000" rpy="0 0 0" /> 
+			<parent link="femur_l"/> 
+			<child link="tibia_l_f1"/> 
+			<axis xyz=" 1.00000000  0.00000000  0.00000000"/> 
+			<limit effort="80.78233333333333" velocity="1.0" lower="-2.0943951" upper="0.17453293" /> 
+
+		</joint> 
+
+		<transmission name="trans_knee_l_RX">
+			<type>transmission_interface/SimpleTransmission</type>
+			<joint name="knee_l_RX">
+				<hardwareInterface>EffortJointInterface</hardwareInterface>
+			</joint>
+			<actuator name="motor_knee_l_RX">
+				<hardwareInterface>EffortJointInterface</hardwareInterface>
+				<mechanicalReduction>1</mechanicalReduction>
+			</actuator>
+		</transmission>
+
+		<link name="tibia_l_f2"> 
+
+			<inertial>
+				<mass value="0.0001"/> 
+				<origin xyz=" 0.00000000  0.00000000  0.00000000" rpy="0 0 0" /> 
+				<inertia ixx="0.0003" iyy="0.0003" izz="0.0003" ixy="0.0" ixz="0.0" iyz="0.0"/> 
+			</inertial> 
+
+		</link> 
+
+		<joint name="knee_l_RZ" type="revolute"> 
+
+			<origin xyz=" 0.00000000  0.00000000  0.00000000" rpy="0 0 0" /> 
+			<parent link="tibia_l_f1"/> 
+			<child link="tibia_l_f2"/> 
+			<axis xyz=" 0.00000000  0.00000000  1.00000000"/> 
+			<limit effort="23.648" velocity="1.0" lower="-2.0943951" upper="0.17453293" /> 
+
+		</joint> 
+
+		<transmission name="trans_knee_l_RZ">
+			<type>transmission_interface/SimpleTransmission</type>
+			<joint name="knee_l_RZ">
+				<hardwareInterface>EffortJointInterface</hardwareInterface>
+			</joint>
+			<actuator name="motor_knee_l_RZ">
+				<hardwareInterface>EffortJointInterface</hardwareInterface>
+				<mechanicalReduction>1</mechanicalReduction>
+			</actuator>
+		</transmission>
+
+		<joint name="knee_l_RY" type="revolute"> 
+
+			<origin xyz=" 0.00000000  0.00000000  0.00000000" rpy="0 0 0" /> 
+			<parent link="tibia_l_f2"/> 
+			<child link="tibia_l"/> 
+			<axis xyz=" 0.00000000  1.00000000  0.00000000"/> 
+			<limit effort="23.648" velocity="1.0" lower="-2.0943951" upper="0.17453293" /> 
+
+		</joint> 
+
+		<transmission name="trans_knee_l_RY">
+			<type>transmission_interface/SimpleTransmission</type>
+			<joint name="knee_l_RY">
+				<hardwareInterface>EffortJointInterface</hardwareInterface>
+			</joint>
+			<actuator name="motor_knee_l_RY">
+				<hardwareInterface>EffortJointInterface</hardwareInterface>
+				<mechanicalReduction>1</mechanicalReduction>
+			</actuator>
+		</transmission>
+
+		<joint name="ankle_l" type="revolute"> 
+
+			<origin xyz=" 0.00000000 -0.00000000 -0.43000000" rpy="0 0 0" /> 
+			<parent link="tibia_l"/> 
+			<child link="talus_l"/> 
+			<axis xyz=" 0.97912632  0.10501355  0.17402245"/> 
+			<limit effort="23.648" velocity="1.0" lower="-1.57079633" upper="1.57079633" /> 
+
+		</joint> 
+
+		<transmission name="trans_ankle_l">
+			<type>transmission_interface/SimpleTransmission</type>
+			<joint name="ankle_l">
+				<hardwareInterface>EffortJointInterface</hardwareInterface>
+			</joint>
+			<actuator name="motor_ankle_l">
+				<hardwareInterface>EffortJointInterface</hardwareInterface>
+				<mechanicalReduction>1</mechanicalReduction>
+			</actuator>
+		</transmission>
+
+		<joint name="subtalar_l" type="floating"> 
+
+			<origin xyz="-0.00792000 -0.04877000 -0.04195000" rpy="0 0 0" /> 
+			<parent link="talus_l"/> 
+			<child link="calcn_l"/> 
+		</joint> 
+
+		<joint name="mtp_l" type="floating"> 
+
+			<origin xyz="-0.00108000  0.17880000 -0.00200000" rpy="0 0 0" /> 
+			<parent link="calcn_l"/> 
+			<child link="toes_l"/> 
+		</joint> 
+
+		<link name="torso_f1"> 
+
+			<inertial>
+				<mass value="0.0001"/> 
+				<origin xyz=" 0.00000000  0.00000000  0.00000000" rpy="0 0 0" /> 
+				<inertia ixx="0.0003" iyy="0.0003" izz="0.0003" ixy="0.0" ixz="0.0" iyz="0.0"/> 
+			</inertial> 
+
+		</link> 
+
+		<joint name="back_RX" type="revolute"> 
+
+			<origin xyz="-0.00000000 -0.10070000  0.08150000" rpy="0 0 0" /> 
+			<parent link="pelvis"/> 
+			<child link="torso_f1"/> 
+			<axis xyz=" 1.00000000  0.00000000  0.00000000"/> 
+			<limit effort="166.0" velocity="1.0" lower="-1.57079633" upper="1.57079633" /> 
+
+		</joint> 
+
+		<transmission name="trans_back_RX">
+			<type>transmission_interface/SimpleTransmission</type>
+			<joint name="back_RX">
+				<hardwareInterface>EffortJointInterface</hardwareInterface>
+			</joint>
+			<actuator name="motor_back_RX">
+				<hardwareInterface>EffortJointInterface</hardwareInterface>
+				<mechanicalReduction>1</mechanicalReduction>
+			</actuator>
+		</transmission>
+
+		<link name="torso_f2"> 
+
+			<inertial>
+				<mass value="0.0001"/> 
+				<origin xyz=" 0.00000000  0.00000000  0.00000000" rpy="0 0 0" /> 
+				<inertia ixx="0.0003" iyy="0.0003" izz="0.0003" ixy="0.0" ixz="0.0" iyz="0.0"/> 
+			</inertial> 
+
+		</link> 
+
+		<joint name="back_RY" type="revolute"> 
+
+			<origin xyz=" 0.00000000  0.00000000  0.00000000" rpy="0 0 0" /> 
+			<parent link="torso_f1"/> 
+			<child link="torso_f2"/> 
+			<axis xyz=" 0.00000000  1.00000000  0.00000000"/> 
+			<limit effort="23.648" velocity="1.0" lower="-1.57079633" upper="1.57079633" /> 
+
+		</joint> 
+
+		<transmission name="trans_back_RY">
+			<type>transmission_interface/SimpleTransmission</type>
+			<joint name="back_RY">
+				<hardwareInterface>EffortJointInterface</hardwareInterface>
+			</joint>
+			<actuator name="motor_back_RY">
+				<hardwareInterface>EffortJointInterface</hardwareInterface>
+				<mechanicalReduction>1</mechanicalReduction>
+			</actuator>
+		</transmission>
+
+		<joint name="back_RZ" type="revolute"> 
+
+			<origin xyz=" 0.00000000  0.00000000  0.00000000" rpy="0 0 0" /> 
+			<parent link="torso_f2"/> 
+			<child link="torso"/> 
+			<axis xyz=" 0.00000000  0.00000000  1.00000000"/> 
+			<limit effort="23.648" velocity="1.0" lower="-1.57079633" upper="1.57079633" /> 
+
+		</joint> 
+
+		<transmission name="trans_back_RZ">
+			<type>transmission_interface/SimpleTransmission</type>
+			<joint name="back_RZ">
+				<hardwareInterface>EffortJointInterface</hardwareInterface>
+			</joint>
+			<actuator name="motor_back_RZ">
+				<hardwareInterface>EffortJointInterface</hardwareInterface>
+				<mechanicalReduction>1</mechanicalReduction>
+			</actuator>
+		</transmission>
+	</xacro:macro>
+</robot> 

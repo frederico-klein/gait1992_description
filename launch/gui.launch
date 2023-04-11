@@ -1,0 +1,5 @@
+<launch>
+    <node pkg="joint_state_publisher_gui" type="joint_state_publisher_gui" name="human_joint_gui" >
+      <remap from="joint_states" to="model_generic/joint_states" />
+    </node>
+</launch>

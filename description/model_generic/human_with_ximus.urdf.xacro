@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<robot xmlns:xacro="http://ros.org/wiki/xacro" name="model_generic">
+	<xacro:include filename="$(find gait1992_description)/description/model_generic/model_generic.urdf.xacro" />
+	<xacro:a_human parent="ground" />
+	<xacro:include filename="$(find ximu3_ros)/urdf/ximu3.urdf.xacro" />
+	<xacro:ximu_link_and_joint parent="torso" />
+	<xacro:ximu_link_and_joint parent="pelvis" />
+	<xacro:ximu_link_and_joint parent="femur_l" />
+	<xacro:ximu_link_and_joint parent="femur_r" />
+	<xacro:ximu_link_and_joint parent="tibia_l" />
+	<xacro:ximu_link_and_joint parent="tibia_r" />
+	<xacro:ximu_link_and_joint parent="talus_l" />
+	<xacro:ximu_link_and_joint parent="talus_r" />
+
+</robot>
