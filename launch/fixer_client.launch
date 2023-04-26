@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<launch>
+		<arg name="body" default="torso"/>
+
+		<node pkg="gait1992_description" type="floating_joint_state_publisher.py" 	name="$(arg body)_joint_state_publisher" output="screen">
+			<param name="parent_frame_id" value="$(arg body)"/>
+			<param name="child_frame_id" value="$(arg body)_imu"/>
+		</node>
+
+</launch>

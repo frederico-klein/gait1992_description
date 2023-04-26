@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<launch>
+	<arg name="body" default="torso"/>
+
+	<node pkg="gait1992_description" type="fixquaternions_server.py" 		name="$(arg body)_imu_pose_publisher_updater" 	 output="screen"/>
+
+
+</launch>
