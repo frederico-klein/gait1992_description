@@ -3,13 +3,13 @@
 	<xacro:include filename="$(find gait1992_description)/description/model_generic/model_generic.urdf.xacro" />
 	<xacro:a_human parent="ground" />
 	<xacro:include filename="$(find ximu3_ros)/urdf/ximu3.urdf.xacro" />
-	<xacro:ximu_link_and_joint parent="torso" />
-	<xacro:ximu_link_and_joint parent="pelvis" />
-	<xacro:ximu_link_and_joint parent="femur_l" />
-	<xacro:ximu_link_and_joint parent="femur_r" />
-	<xacro:ximu_link_and_joint parent="tibia_l" />
-	<xacro:ximu_link_and_joint parent="tibia_r" />
-	<xacro:ximu_link_and_joint parent="talus_l" />
-	<xacro:ximu_link_and_joint parent="talus_r" />
+	<xacro:ximu_link_and_joint parent="torso" origin="0 -0.1 0.3" />
+	<xacro:ximu_link_and_joint parent="pelvis" origin="0 -0.2 0" />
+	<xacro:ximu_link_and_joint parent="femur_l" origin="-0.05 0 -0.2" />
+	<xacro:ximu_link_and_joint parent="femur_r" origin="0.05 0 -0.2" />
+	<xacro:ximu_link_and_joint parent="tibia_l" origin="-0.05 0 -0.2" />
+	<xacro:ximu_link_and_joint parent="tibia_r" origin="0.05 0 -0.2" />
+	<xacro:ximu_link_and_joint parent="talus_l" origin="0 0.1 0" />
+	<xacro:ximu_link_and_joint parent="talus_r" origin="0 0.1 0" />
 
 </robot>

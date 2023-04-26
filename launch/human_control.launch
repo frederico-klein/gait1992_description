@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no" ?>
 <launch>
+	<arg name="rviz_file" default="$(find gait1992_description)/rviz/gait1992_description.rviz" />
 	<!-- We resume the logic in empty_world.launch, changing only the name of the world to be launched -->
 	<!--<include file="$(find gazebo_ros)/launch/empty_world.launch">
 		<arg name="paused" value="false"/>
@@ -9,7 +10,7 @@
 		<arg name="debug" value="false"/>
 	</include>-->
 
-	<node name="rviz" pkg="rviz" type="rviz" args="-d $(find gait1992_description)/rviz/gait1992_description.rviz" />
+	<node name="rviz" pkg="rviz" type="rviz" args="-d $(arg rviz_file)" />
 
 	<param name="robot_description" command="cat /catkin_ws/src/gait1992_description/description/model_generic/model_generic_aCol.urdf"/>
 
