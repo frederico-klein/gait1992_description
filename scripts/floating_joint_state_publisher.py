@@ -52,10 +52,11 @@ class FloatingJointStatePublisher:
 
         #pub = rospy.Publisher('pose', PoseStamped, queue_size=1)
         listener = tf.TransformListener()
-        rate = rospy.Rate(10) # Hz
+        rate = rospy.Rate(rospy.get_param("~rate",10)) # Hz
         h = std_msgs.msg.Header()
         h.frame_id = self.parent_frame_id
         br = tf.TransformBroadcaster()
+
         rospy.loginfo("trying to connect to dynamic_reconfigure server: %s"%self.pose_server_node_name)
         cl = Client(self.pose_server_node_name, 30, self.callback)
 
@@ -64,10 +65,22 @@ class FloatingJointStatePublisher:
                 q_rot = [self.qx,self.qy,self.qz,self.qw]
             else:
                 q_rot = tf.transformations.quaternion_from_euler(self.r, self.p, self.y);
+            ## lets try to get the heading
+            q_heading = [0,0,0,1]
+            try:
+                _ , q_heading =  listener.lookupTransform("pelvis_heading_frame", "map", rospy.Time(0))
+                rospy.logdebug("heading I will try to apply%s"%q_heading)
+            except tf.LookupException as e:
+
+                rospy.logwarn_throttle(3,"cannot read transformation!\n%s"%e)
+                #rate.sleep()
+                #continue
+            q_new = tf.transformations.quaternion_multiply(q_heading, q_rot)
 
             #br.sendTransform((0.5, 0.5, 0), (0,0,0,1), rospy.Time.now(), self.new_frame_id+"_transl", self.parent_frame_id)
             origin = (self.origin_x,self.origin_y,self.origin_z)
-            br.sendTransform(origin, q_rot, rospy.Time.now(), self.child_frame_id, self.parent_frame_id)
+            ##br.sendTransform(origin, q_rot, rospy.Time.now(), self.child_frame_id, self.parent_frame_id)
+            br.sendTransform(origin, q_new, rospy.Time.now(), self.child_frame_id, self.parent_frame_id)
 
             rate.sleep()
 
