@@ -9,7 +9,7 @@
 		</gazebo>
 
 		<link name="${parent}" /> 
-
+		<link name="urdf_pelvis" />
 		<link name="pelvis"> 
 
 			<inertial> 
@@ -454,10 +454,17 @@
 
 		</link> 
 
-		<joint name="ground_pelvis" type="floating"> 
+		<joint name="pelvis_urdf_joint" type="floating"> 
 
-			<origin xyz=" 1.00000000  1.00000000  1.00000000" rpy="0 0 0" /> 
-			<parent link="ground"/> 
+			<origin xyz=" 0 0 0 " rpy="0 0 0" /> 
+			<parent link="${parent}"/> 
+			<child link="urdf_pelvis"/> 
+		</joint> 
+		
+		<joint name="rotate_pelvis" type="fixed"> 
+
+			<origin xyz="0 0 0" rpy="-1.57079633 -1.57079633 0" /> 
+			<parent link="urdf_pelvis"/> 
 			<child link="pelvis"/> 
 		</joint> 
 
