@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no" ?>
 <launch>
-    <node pkg="tf" type="static_transform_publisher" name="map_and_ground_are_the_same" args="0.0 0.0 0.0 0 0 0 map ground 10" />
+    <node pkg="tf" type="static_transform_publisher" name="map_and_ground_are_the_same" args="0.0 0.0 0.0 0 0 0 map ground 100" />
 
 </launch>
 
