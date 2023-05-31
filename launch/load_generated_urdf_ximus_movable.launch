@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<launch>
+	<param name="robot_description" command="$(find xacro)/xacro $(find gait1992_description)/description/model_generic/human_with_ximus.urdf.xacro"/>
+</launch>

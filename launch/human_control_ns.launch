@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
 <launch>
   <!-- We resume the logic in empty_world.launch, changing only the name of the world to be launched -->
   <!--<include file="$(find gazebo_ros)/launch/empty_world.launch">
@@ -10,7 +11,7 @@
 
   <node name="rviz" pkg="rviz" type="rviz" args="-d $(find gait1992_description)/rviz/gait1992_description_imus.rviz" />
 
-    <param name="robot_description" command="cat /catkin_ws/src/gait1992_description/description/model_generic/model_generic_aCol.urdf"/>
+	<include file="$(find gait1992_description)/launch/load_urdf.launch"/>
 
     <node name="human_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" respawn="false" output="screen">
         <remap from="/joint_states" to="/model_generic/joint_states" />
@@ -19,14 +20,8 @@
 
     <node name="spawn_urdf" pkg="gazebo_ros" type="spawn_model" args="-file /catkin_ws/src/gait1992_description/description/model_generic/model_generic_aCol.urdf -urdf -x 0 -y 0 -z 2 -model model_generic" />
 
-    <node pkg="tf" type="static_transform_publisher" name="subtalar_r" args=" 0.00792000 -0.04877000 -0.04195000 0 0 0 human/talus_r human/calcn_r 1" />
-
-    <node pkg="tf" type="static_transform_publisher" name="mtp_r" args=" 0.00108000  0.17880000 -0.00200000 0 0 0 human/calcn_r human/toes_r 1" />
-
-    <node pkg="tf" type="static_transform_publisher" name="subtalar_l" args="-0.00792000 -0.04877000 -0.04195000 0 0 0 human/talus_l human/calcn_l 1" />
-
-    <node pkg="tf" type="static_transform_publisher" name="mtp_l" args="-0.00108000  0.17880000 -0.00200000 0 0 0 human/calcn_l human/toes_l 1" />
-    
-    <node pkg="tf" type="static_transform_publisher" name="ground_to_human" args="0 0 1 0 0 0 ground human/pelvis 1" />
+	<include file="$(find gait1992_description)/launch/feet_missing_tfs_publisher.launch">
+		<arg name="freq" value="100"/>
+	</include>
 
 </launch>

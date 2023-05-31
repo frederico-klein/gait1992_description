@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <robot xmlns:xacro="http://ros.org/wiki/xacro" name="model_generic">
 	<xacro:include filename="$(find gait1992_description)/description/model_generic/model_generic.urdf.xacro" />
-	<xacro:a_human parent="ground" />
+	<xacro:a_human parent="subject_opensim" />
 	<xacro:include filename="$(find ximu3_ros)/urdf/ximu3.urdf.xacro" />
 	<xacro:ximu_link_and_joint_floating parent="torso" origin="0 -0.1 0.3" />
 	<xacro:ximu_link_and_joint_floating parent="pelvis" origin="0 -0.2 0" />
