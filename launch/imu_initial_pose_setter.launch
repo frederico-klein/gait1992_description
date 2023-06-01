@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no" ?>
 <launch>
 	<arg name="body" default="torso"/>
+	<!-- arg name="imu_calib_dir" default="/tmp/imu_calib/"/ -->
+	<arg name="imu_calib_dir" default="$(find gait1992_description)/imu_defaults"/>
 	<group ns="$(arg body)_imu" >
 
 		<node pkg="gait1992_description" type="fixquaternions_server.py" 		name="pose_calibrated" output="screen"/>
@@ -10,7 +12,7 @@
 			<param name="pose_publisher_name" value="pose_calibrated"/>
 			<param name="rate" value="100"/>
 		</node>
-		<node name="dynamic_reconfigure_load" pkg="dynamic_reconfigure" type="dynparam" args="load pose_calibrated /tmp/imu_calib/$(arg body).yaml" />
+		<node name="dynamic_reconfigure_load" pkg="dynamic_reconfigure" type="dynparam" args="load pose_calibrated $(arg imu_calib_dir)/$(arg body).yaml" />
 	</group>
 
 </launch>

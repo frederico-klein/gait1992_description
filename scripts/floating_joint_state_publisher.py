@@ -4,7 +4,6 @@ import rospy
 import tf
 import std_msgs.msg
 from dynamic_reconfigure.client import Client
-from gait1992_description.cfg import FixPoseConfig
 
 class FloatingJointStatePublisher:
 

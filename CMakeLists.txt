@@ -94,6 +94,7 @@ find_package(catkin REQUIRED COMPONENTS
 #   cfg/DynReconf1.cfg
 #   cfg/DynReconf2.cfg
 	cfg/FixPose.cfg
+	cfg/FixPoseBase.cfg
 	cfg/FixHeading.cfg
 )
 

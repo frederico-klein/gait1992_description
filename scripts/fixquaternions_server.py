@@ -5,7 +5,7 @@ import rospy
 #import math
 from numpy.linalg import norm
 from dynamic_reconfigure.server import Server
-from gait1992_description.cfg import FixPoseConfig
+from gait1992_description.cfg import FixPoseConfig, FixPoseBaseConfig
 import tf
 from geometry_msgs.msg import Quaternion
 import sys
@@ -62,8 +62,11 @@ if __name__ == '__main__':
         effective_server_name =node_name + '_pose_publisher_updater' 
         rospy.init_node( node_name + '_pose_publisher_updater')
         rospy.loginfo("Waiting for dynamic_reconfigure calls at: %s"%rospy.get_name())
+        if rospy.get_param("~is_imu", default=True):
+            srv = Server(FixPoseConfig, callback)
+        else:
+            srv = Server(FixPoseBaseConfig, callback)
 
-        srv = Server(FixPoseConfig, callback)
         rospy.spin()
     except rospy.ROSException as e:
         rospy,logerr("something wrong happened %s"%e)

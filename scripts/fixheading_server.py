@@ -13,7 +13,12 @@ import sys
 br = tf.TransformBroadcaster()
 
 def send_zero():
-    callback({"yaw":0},None)
+    tf_listener = tf.TransformListener() 
+    tf_listener.waitForTransform( "map", "map", rospy.Time(), rospy.Duration(4.0))    
+    r = rospy.Rate(10)
+    for i in range(40): ## will send zeros for 4 seconds to make sure everyone gets this tf. 
+        callback({"yaw":0},None)
+        r.sleep()
 
 def callback(config, level):
     rospy.loginfo("""Reconfigure Request:
