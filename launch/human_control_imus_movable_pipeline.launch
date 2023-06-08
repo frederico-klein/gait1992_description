@@ -14,9 +14,7 @@
 	<param name="robot_description" command="$(find xacro)/xacro $(find gait1992_description)/description/model_generic/human_with_ximus_movable.urdf.xacro"/>
 
 	<node name="human_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" respawn="false" output="screen">
-		<!-- this should make it publish as fast as possible -->
-		<!-- param name="ignore_timestamp" value="true"/-->
-		<param name="publish_frequency" value="100" />
+		<param name="ignore_timestamp" value="true"/>
 		<remap from="/joint_states" to="/model_generic/joint_states" />
 	</node>
 
