@@ -19,6 +19,7 @@ class FloatingJointStatePublisher:
         self.origin_y = 0
         self.origin_z = 0
         self.child_frame_id = rospy.get_param("~child_frame_id",child)
+        self.reference_heading_frame = rospy.get_param("~reference_heading_frame_id", "pelvis_heading_frame")
         self.pose_server_node_name = rospy.get_param("~pose_publisher_name",self.child_frame_id + "_pose_publisher_updater")
         self.parent_frame_id = rospy.get_param("~parent_frame_id",parent)
         self.use_quaternions = False
@@ -67,7 +68,7 @@ class FloatingJointStatePublisher:
             ## lets try to get the heading
             q_heading = [0,0,0,1]
             try:
-                _ , q_heading =  listener.lookupTransform("pelvis_heading_frame", "map", rospy.Time(0))
+                _ , q_heading =  listener.lookupTransform(self.reference_heading_frame, "map", rospy.Time(0))
                 rospy.logdebug("heading I will try to apply%s"%q_heading)
             except tf.LookupException as e:
 

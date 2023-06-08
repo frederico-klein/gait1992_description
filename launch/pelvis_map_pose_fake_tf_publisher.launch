@@ -2,6 +2,7 @@
 <launch>
 	<arg name="base_frame" default="pelvis"/>
 	<arg name="map_frame" default="map"/>
+	<arg name="reference_heading_frame" default="map"/>
 	<arg name="imu_calib_dir" default="$(find gait1992_description)/imu_defaults"/>
 	<group ns="base_frame_setter" >
 
@@ -10,6 +11,7 @@
 		</node>
 		<node pkg="gait1992_description" type="floating_joint_state_publisher.py" 	name="base_body_joint_state_publisher" output="screen">
 			<param name="parent_frame_id" value="$(arg map_frame)"/>
+			<param name="reference_heading_frame_id" value="$(arg reference_heading_frame)"/>
 			<param name="child_frame_id" value="$(arg base_frame)"/>
 			<param name="pose_publisher_name" value="pose_calibrated"/>
 			<param name="rate" value="100"/>
