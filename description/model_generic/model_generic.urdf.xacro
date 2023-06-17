@@ -453,7 +453,7 @@
 
 		</link> 
 
-		<joint name="rotate_pelvis" type="fixed"> 
+		<joint name="rotate_pelvis" type="floating"> 
 
 			<origin xyz="0 0 0" rpy="-1.57079633 -1.57079633 0" /> 
 			<parent link="${parent}"/> 
