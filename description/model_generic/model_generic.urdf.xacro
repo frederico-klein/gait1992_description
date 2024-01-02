@@ -647,18 +647,24 @@
 			</actuator>
 		</transmission>
 
-		<joint name="subtalar_r" type="floating"> 
+		<joint name="subtalar_r" type="revolute"> 
 
 			<origin xyz=" 0.00792000 -0.04877000 -0.04195000" rpy="0 0 0" /> 
 			<parent link="talus_r"/> 
 			<child link="calcn_r"/> 
+			<axis xyz="0.0 1.0 0.0"/>
+			<limit effort="23.648" velocity="1.0" lower="-1.57079633" upper="1.57079633" /> 
+
 		</joint> 
 
-		<joint name="mtp_r" type="floating"> 
+		<joint name="mtp_r" type="revolute"> 
 
 			<origin xyz=" 0.00108000  0.17880000 -0.00200000" rpy="0 0 0" /> 
 			<parent link="calcn_r"/> 
 			<child link="toes_r"/> 
+			<axis xyz="1.0 0.0 0.0"/>
+			<limit effort="23.648" velocity="1.0" lower="-1.57079633" upper="1.57079633" /> 
+
 		</joint> 
 
 		<link name="femur_l_f1"> 
@@ -848,18 +854,22 @@
 			</actuator>
 		</transmission>
 
-		<joint name="subtalar_l" type="floating"> 
+		<joint name="subtalar_l" type="revolute"> 
 
 			<origin xyz="-0.00792000 -0.04877000 -0.04195000" rpy="0 0 0" /> 
 			<parent link="talus_l"/> 
 			<child link="calcn_l"/> 
+			<axis xyz="0.0 1.0 0.0"/>
+			<limit effort="23.648" velocity="1.0" lower="-1.57079633" upper="1.57079633" /> 
 		</joint> 
 
-		<joint name="mtp_l" type="floating"> 
+		<joint name="mtp_l" type="revolute"> 
 
 			<origin xyz="-0.00108000  0.17880000 -0.00200000" rpy="0 0 0" /> 
 			<parent link="calcn_l"/> 
 			<child link="toes_l"/> 
+			<axis xyz="1.0 0.0 0.0"/>
+			<limit effort="23.648" velocity="1.0" lower="-1.57079633" upper="1.57079633" /> 
 		</joint> 
 
 		<link name="torso_f1"> 
