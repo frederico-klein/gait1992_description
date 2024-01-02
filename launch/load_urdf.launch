@@ -1,4 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no" ?>
 <launch>
+
+	<!-- need to put the link lengths here but also multiply the offsets of the joints that are said to have a parent that is that link, so that the visuals and joint axis match up correctly. see FK scaled model for all the different places that need to be scaled. -->
+	<arg name="a_link_length" default="1"/>
+
 	<param name="robot_description" command="$(find xacro)/xacro $(find gait1992_description)/description/model_generic/human_with_ximus.urdf.xacro"/>
 </launch>
