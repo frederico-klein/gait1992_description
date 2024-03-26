@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<launch>
+	<node name="human_state_publisher" pkg="human_state_publisher" type="human_state_publisher" respawn="false" output="screen">
+		<param name="ignore_timestamp" value="true"/>
+		<remap from="/joint_states" to="/model_generic/joint_states" />
+	</node>
+</launch>
+

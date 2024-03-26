@@ -8,12 +8,15 @@
 		<arg name="recording" value="false"/>
 		<arg name="debug" value="false"/>
 	</include>-->
+	<arg name="tf_prefix" default="ik"/>
 
 	<node name="rviz" pkg="rviz" type="rviz" args="-d $(find gait1992_description)/rviz/gait1992_description.rviz" />
 
 	<param name="robot_description" command="$(find xacro)/xacro $(find gait1992_description)/description/model_generic/human_with_ximus_movable.urdf.xacro"/>
 
-	<node name="human_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" respawn="false" output="screen">
+	<node name="human_state_publisher" pkg="human_state_publisher" type="human_state_publisher" respawn="false" output="screen">
+		<param name="tf_prefix" value="$(arg tf_prefix)"/>
+
 		<param name="ignore_timestamp" value="true"/>
 		<remap from="/joint_states" to="/model_generic/joint_states" />
 	</node>
@@ -21,6 +24,7 @@
 	<!-- node name="spawn_urdf" pkg="gazebo_ros" type="spawn_model" args="-file /catkin_ws/src/gait1992_description/description/model_generic/model_generic_aCol.urdf -urdf -x 0 -y 0 -z 2 -model model_generic" /-->
 
 	<include file="$(find gait1992_description)/launch/feet_missing_tfs_publisher.launch">
+		<arg name="tf_prefix" value="$(arg tf_prefix)/"/>
 	</include>
 
 </launch>
