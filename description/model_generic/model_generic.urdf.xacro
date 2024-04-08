@@ -8,7 +8,6 @@
 			</plugin>
 		</gazebo>
 
-		<link name="${parent}" /> 
 		<link name="pelvis"> 
 
 			<inertial> 
@@ -453,13 +452,6 @@
 			</collision> 
 
 		</link> 
-
-		<joint name="rotate_pelvis" type="floating"> 
-
-			<origin xyz="${0*global_scale} ${0*global_scale} ${0*global_scale}" rpy="-1.57079633 -1.57079633 0" /> 
-			<parent link="${parent}"/> 
-			<child link="pelvis"/> 
-		</joint> 
 
 		<link name="femur_r_f1"> 
 
