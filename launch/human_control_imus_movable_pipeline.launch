@@ -9,8 +9,14 @@
 		<arg name="debug" value="false"/>
 	</include>-->
 	<arg name="tf_prefix" default="ik"/>
+	<arg name="use_gui"   default="false"/>
+	<arg name="show_rviz"   default="true"/>
 
-	<node name="rviz" pkg="rviz" type="rviz" args="-d $(find gait1992_description)/rviz/gait1992_description.rviz" />
+	<group if="$(arg use_gui)">
+		<include file="$(find gait1992_description)/launch/gui.launch"/>
+	</group>
+
+	<node name="rviz" pkg="rviz" type="rviz" args="-d $(find gait1992_description)/rviz/gait1992_description.rviz" if="$(arg show_rviz)" />
 
 	<param name="robot_description" command="$(find xacro)/xacro $(find gait1992_description)/description/model_generic/human_with_ximus_movable.urdf.xacro"/>
 
