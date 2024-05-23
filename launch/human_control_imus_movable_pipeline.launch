@@ -11,6 +11,8 @@
 	<arg name="tf_prefix" default="ik"/>
 	<arg name="use_gui"   default="false"/>
 	<arg name="show_rviz"   default="true"/>
+	
+	<arg name="urdf_model_scale"   default="1"/>
 
 	<group if="$(arg use_gui)">
 		<include file="$(find gait1992_description)/launch/gui.launch"/>
@@ -18,7 +20,7 @@
 
 	<node name="rviz" pkg="rviz" type="rviz" args="-d $(find gait1992_description)/rviz/gait1992_description.rviz" if="$(arg show_rviz)" />
 
-	<param name="robot_description" command="$(find xacro)/xacro $(find gait1992_description)/description/model_generic/human_with_ximus_movable.urdf.xacro"/>
+	<param name="robot_description" command="$(find xacro)/xacro $(find gait1992_description)/description/model_generic/human_with_ximus_movable.urdf.xacro scale:=$(arg urdf_model_scale)"/>
 
 	<node name="human_state_publisher" pkg="human_state_publisher" type="human_state_publisher" respawn="false" output="screen">
 		<param name="tf_prefix" value="$(arg tf_prefix)"/>

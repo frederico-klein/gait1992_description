@@ -1,7 +1,7 @@
 <?xml version="1.0" ?>
 
 <robot name="model_generic" xmlns:xacro="http://www.ros.org/wiki/xacro"> 
-	<xacro:macro name="a_human" params="parent color:=1 global_scale:=0.92">
+	<xacro:macro name="a_human" params="parent color:=1 global_scale:=^|0.921">
 		<gazebo>
 			<plugin name="gazebo_ros_control" filename="libgazebo_ros_control.so">
 				<robotNamespace>/model_generic</robotNamespace>

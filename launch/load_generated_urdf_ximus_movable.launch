@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no" ?>
 <launch>
-	<param name="robot_description" command="$(find xacro)/xacro $(find gait1992_description)/description/model_generic/human_with_ximus_movable.urdf.xacro"/>
+	<arg name="urdf_model_scale"   default="1"/>
+	<param name="robot_description" command="$(find xacro)/xacro $(find gait1992_description)/description/model_generic/human_with_ximus_movable.urdf.xacro scale:=$(arg urdf_model_scale)"/>
 </launch>

@@ -7,11 +7,14 @@ Panels:
         - /Global Options1
         - /Status1
         - /RobotModel1
-        - /RobotModel1/Links1
+        - /RobotModel1/Status1
         - /TF1
+        - /TF1/Status1
         - /TF1/Frames1
         - /TF1/Tree1
         - /Effort1
+        - /WrenchStamped1
+        - /WrenchStamped2
       Splitter Ratio: 0.5
     Tree Height: 846
   - Class: rviz/Selection
@@ -210,7 +213,7 @@ Visualization Manager:
           Show Trail: false
           Value: true
       Name: RobotModel
-      Robot Description: robot_description
+      Robot Description: /ik/robot_description
       TF Prefix: ik
       Update Interval: 0
       Value: true
@@ -222,177 +225,73 @@ Visualization Manager:
       Frame Timeout: 15000
       Frames:
         All Enabled: false
-        R_GoGi1:
+        calcn_l:
           Value: true
-        R_GoGi1_inverse:
-          Value: true
-        R_GoGi2:
-          Value: true
-        R_GoGi2_inverse:
-          Value: true
-        R_heading:
-          Value: true
-        R_heading0:
-          Value: true
-        R_heading1:
-          Value: true
-        R_heading2:
-          Value: true
-        R_heading3:
-          Value: true
-        R_heading4:
-          Value: true
-        R_heading5:
-          Value: true
-        R_heading6:
-          Value: true
-        R_heading7:
-          Value: true
-        R_heading8:
-          Value: true
-        R_heading9:
+        calcn_r:
           Value: true
         femur_l:
           Value: true
+        femur_l_f1:
+          Value: true
+        femur_l_f2:
+          Value: true
+        femur_l_imu:
+          Value: true
         femur_r:
           Value: true
-        ik/calcn_l:
-          Value: false
-        ik/calcn_r:
-          Value: false
-        ik/femur_l:
-          Value: false
-        ik/femur_l_f1:
-          Value: false
-        ik/femur_l_f2:
-          Value: false
-        ik/femur_l_imu:
-          Value: false
-        ik/femur_r:
-          Value: false
-        ik/femur_r_f1:
-          Value: false
-        ik/femur_r_f2:
-          Value: false
-        ik/femur_r_imu:
-          Value: false
-        ik/pelvis:
+        femur_r_f1:
           Value: true
-        ik/pelvis_imu:
+        femur_r_f2:
+          Value: true
+        femur_r_imu:
+          Value: true
+        ik/pelvis:
           Value: true
         ik/subject_opensim:
           Value: true
-        ik/talus_l:
-          Value: false
-        ik/talus_l_imu:
-          Value: false
-        ik/talus_r:
-          Value: false
-        ik/talus_r_imu:
-          Value: false
-        ik/tibia_l:
-          Value: false
-        ik/tibia_l_f1:
-          Value: false
-        ik/tibia_l_f2:
-          Value: false
-        ik/tibia_l_imu:
-          Value: false
-        ik/tibia_r:
-          Value: false
-        ik/tibia_r_f1:
-          Value: false
-        ik/tibia_r_f2:
-          Value: false
-        ik/tibia_r_imu:
-          Value: false
-        ik/toes_l:
-          Value: false
-        ik/toes_r:
-          Value: false
-        ik/torso:
-          Value: false
-        ik/torso_f1:
-          Value: false
-        ik/torso_f2:
-          Value: false
-        ik/torso_imu:
-          Value: false
-        imu/femur_l:
-          Value: false
-        imu/femur_l_0:
-          Value: true
-        imu/femur_r:
-          Value: false
-        imu/femur_r_0:
-          Value: true
-        imu/pelvis:
-          Value: false
-        imu/pelvis_0:
-          Value: true
-        imu/talus_l:
-          Value: false
-        imu/talus_l_0:
-          Value: true
-        imu/talus_r:
-          Value: false
-        imu/talus_r_0:
-          Value: true
-        imu/tibia_l:
-          Value: false
-        imu/tibia_l_0:
-          Value: true
-        imu/tibia_r:
-          Value: false
-        imu/tibia_r_0:
-          Value: true
-        imu/torso:
-          Value: false
-        imu/torso_0:
-          Value: true
-        imu_default_frame:
-          Value: true
-        just_q0_base:
+        ik/subject_opensim_other:
           Value: true
         map:
           Value: true
-        opensim_default_frame:
-          Value: true
         pelvis:
           Value: true
-        q0_inverse_base:
-          Value: true
-        ro_femur_l:
-          Value: true
-        ro_femur_r:
-          Value: true
-        ro_pelvis:
-          Value: true
-        ro_talus_l:
-          Value: true
-        ro_talus_r:
-          Value: true
-        ro_tibia_l:
-          Value: true
-        ro_tibia_r:
-          Value: true
-        ro_torso:
-          Value: true
-        subject_heading:
+        pelvis_imu:
           Value: true
         talus_l:
           Value: true
+        talus_l_imu:
+          Value: true
         talus_r:
+          Value: true
+        talus_r_imu:
           Value: true
         tibia_l:
           Value: true
+        tibia_l_f1:
+          Value: true
+        tibia_l_f2:
+          Value: true
+        tibia_l_imu:
+          Value: true
         tibia_r:
+          Value: true
+        tibia_r_f1:
+          Value: true
+        tibia_r_f2:
+          Value: true
+        tibia_r_imu:
+          Value: true
+        toes_l:
+          Value: true
+        toes_r:
           Value: true
         torso:
           Value: true
-        wtf_base:
+        torso_f1:
           Value: true
-        wtf_base_measured:
+        torso_f2:
+          Value: true
+        torso_imu:
           Value: true
       Marker Alpha: 1
       Marker Scale: 0.20000000298023224
@@ -402,154 +301,51 @@ Visualization Manager:
       Show Names: true
       Tree:
         map:
-          ik/pelvis:
-            ik/femur_l_f1:
-              ik/femur_l_f2:
-                ik/femur_l:
-                  ik/femur_l_imu:
-                    {}
-                  ik/tibia_l_f1:
-                    ik/tibia_l_f2:
-                      ik/tibia_l:
-                        ik/talus_l:
-                          ik/calcn_l:
-                            ik/toes_l:
-                              {}
-                          ik/talus_l_imu:
-                            {}
-                        ik/tibia_l_imu:
-                          {}
-            ik/femur_r_f1:
-              ik/femur_r_f2:
-                ik/femur_r:
-                  ik/femur_r_imu:
-                    {}
-                  ik/tibia_r_f1:
-                    ik/tibia_r_f2:
-                      ik/tibia_r:
-                        ik/talus_r:
-                          ik/calcn_r:
-                            ik/toes_r:
-                              {}
-                          ik/talus_r_imu:
-                            {}
-                        ik/tibia_r_imu:
-                          {}
-            ik/pelvis_imu:
-              {}
-            ik/torso_f1:
-              ik/torso_f2:
-                ik/torso:
-                  ik/torso_imu:
-                    {}
           ik/subject_opensim:
+            ik/pelvis:
+              {}
+          ik/subject_opensim_other:
             {}
-          imu_default_frame:
+        pelvis:
+          femur_l_f1:
+            femur_l_f2:
+              femur_l:
+                femur_l_imu:
+                  {}
+                tibia_l_f1:
+                  tibia_l_f2:
+                    tibia_l:
+                      talus_l:
+                        calcn_l:
+                          toes_l:
+                            {}
+                        talus_l_imu:
+                          {}
+                      tibia_l_imu:
+                        {}
+          femur_r_f1:
+            femur_r_f2:
+              femur_r:
+                femur_r_imu:
+                  {}
+                tibia_r_f1:
+                  tibia_r_f2:
+                    tibia_r:
+                      talus_r:
+                        calcn_r:
+                          toes_r:
+                            {}
+                        talus_r_imu:
+                          {}
+                      tibia_r_imu:
+                        {}
+          pelvis_imu:
             {}
-          opensim_default_frame:
-            R_GoGi1:
-              {}
-            R_GoGi1_inverse:
-              {}
-            R_GoGi2:
-              {}
-            R_GoGi2_inverse:
-              {}
-            R_heading:
-              {}
-            R_heading0:
-              {}
-            R_heading1:
-              {}
-            R_heading2:
-              {}
-            R_heading3:
-              {}
-            R_heading4:
-              {}
-            R_heading5:
-              {}
-            R_heading6:
-              {}
-            R_heading7:
-              {}
-            R_heading8:
-              {}
-            R_heading9:
-              {}
-            femur_l:
-              {}
-            femur_r:
-              {}
-            just_q0_base:
-              {}
-            pelvis:
-              {}
-            q0_inverse_base:
-              {}
-            ro_femur_l:
-              {}
-            ro_femur_r:
-              {}
-            ro_pelvis:
-              {}
-            ro_talus_l:
-              {}
-            ro_talus_r:
-              {}
-            ro_tibia_l:
-              {}
-            ro_tibia_r:
-              {}
-            ro_torso:
-              {}
-            talus_l:
-              {}
-            talus_r:
-              {}
-            tibia_l:
-              {}
-            tibia_r:
-              {}
-            torso:
-              {}
-            wtf_base:
-              {}
-            wtf_base_measured:
-              {}
-          subject_heading:
-            imu/femur_l:
-              {}
-            imu/femur_l_0:
-              {}
-            imu/femur_r:
-              {}
-            imu/femur_r_0:
-              {}
-            imu/pelvis:
-              {}
-            imu/pelvis_0:
-              {}
-            imu/talus_l:
-              {}
-            imu/talus_l_0:
-              {}
-            imu/talus_r:
-              {}
-            imu/talus_r_0:
-              {}
-            imu/tibia_l:
-              {}
-            imu/tibia_l_0:
-              {}
-            imu/tibia_r:
-              {}
-            imu/tibia_r_0:
-              {}
-            imu/torso:
-              {}
-            imu/torso_0:
-              {}
+          torso_f1:
+            torso_f2:
+              torso:
+                torso_imu:
+                  {}
       Update Interval: 0
       Value: true
     - Alpha: 1
@@ -557,48 +353,7 @@ Visualization Manager:
       Enabled: true
       History Length: 1
       Joints:
-        ankle_l:
-          Value: true
-        ankle_r:
-          Value: true
-        back_RX:
-          Value: true
-        back_RY:
-          Value: true
-        back_RZ:
-          Value: true
-        hip_l_RX:
-          Value: true
-        hip_l_RY:
-          Value: true
-        hip_l_RZ:
-          Value: true
-        hip_r_RX:
-          Value: true
-        hip_r_RY:
-          Value: true
-        hip_r_RZ:
-          Value: true
-        knee_l_RX:
-          Value: true
-        knee_l_RY:
-          Value: true
-        knee_l_RZ:
-          Value: true
-        knee_r_RX:
-          Value: true
-        knee_r_RY:
-          Value: true
-        knee_r_RZ:
-          Value: true
-        mtp_l:
-          Value: true
-        mtp_r:
-          Value: true
-        subtalar_l:
-          Value: true
-        subtalar_r:
-          Value: true
+        {}
       Name: Effort
       Queue Size: 10
       Robot Description: robot_description
@@ -608,6 +363,36 @@ Visualization Manager:
       Unreliable: false
       Value: true
       Width: 0.019999999552965164
+    - Alpha: 1
+      Arrow Width: 0.5
+      Class: rviz/WrenchStamped
+      Enabled: true
+      Force Arrow Scale: 2
+      Force Color: 204; 51; 51
+      Hide Small Values: true
+      History Length: 1
+      Name: WrenchStamped
+      Queue Size: 10
+      Topic: /left/wrench
+      Torque Arrow Scale: 2
+      Torque Color: 204; 204; 51
+      Unreliable: false
+      Value: true
+    - Alpha: 1
+      Arrow Width: 0.5
+      Class: rviz/WrenchStamped
+      Enabled: true
+      Force Arrow Scale: 2
+      Force Color: 204; 51; 51
+      Hide Small Values: true
+      History Length: 1
+      Name: WrenchStamped
+      Queue Size: 10
+      Topic: /right/wrench
+      Torque Arrow Scale: 2
+      Torque Color: 204; 204; 51
+      Unreliable: false
+      Value: true
   Enabled: true
   Global Options:
     Background Color: 48; 48; 48
@@ -636,7 +421,7 @@ Visualization Manager:
   Views:
     Current:
       Class: rviz/Orbit
-      Distance: 0.3063523471355438
+      Distance: 0.5116466283798218
       Enable Stereo Rendering:
         Stereo Eye Separation: 0.05999999865889549
         Stereo Focal Distance: 1
@@ -652,7 +437,7 @@ Visualization Manager:
       Invert Z Axis: false
       Name: Current View
       Near Clip Distance: 0.07999999821186066
-      Pitch: 0.6647952198982239
+      Pitch: 0.6697952151298523
       Target Frame: map
       Yaw: 4.694552898406982
     Saved:
@@ -682,7 +467,7 @@ Window Geometry:
   Height: 835
   Hide Left Dock: false
   Hide Right Dock: false
-  QMainWindow State: 000000ff00000000fd00000004000000000000026b00000276fc0200000008fb000000100044006900730070006c00610079007303000002520000002e00000158000003d9fb0000001200530065006c0065006300740069006f006e00000001e10000009b0000005c00fffffffb0000001e0054006f006f006c002000500072006f007000650072007400690065007302000001ed000001df00000185000000a3fb000000120056006900650077007300200054006f006f02000001df000002110000018500000122fb000000200054006f006f006c002000500072006f0070006500720074006900650073003203000002880000011d000002210000017afb0000002000730065006c0065006300740069006f006e00200062007500660066006500720200000138000000aa0000023a00000294fb00000014005700690064006500530074006500720065006f02000000e6000000d2000003ee0000030bfb0000000c004b0069006e0065006300740200000186000001060000030c00000261000000010000010f00000369fc0200000002fb0000001e0054006f006f006c002000500072006f00700065007200740069006500730100000041000000780000000000000000fb0000001200530065006c0065006300740069006f006e010000025a000000b200000000000000000000000200000780000000c7fc0100000002fb0000000a005600690065007700730200000780000002cd000001ef0000016bfb0000000a00560069006500770073030000004e00000080000002e100000197000000030000035c0000003efc0100000002fb0000000800540069006d006501000000000000035c0000030700fffffffb0000000800540069006d006501000000000000045000000000000000000000035c000002a900000004000000040000000800000008fc0000000100000002000000010000000a0054006f006f006c00730100000000ffffffff0000000000000000
+  QMainWindow State: 000000ff00000000fd00000004000000000000026b00000276fc0200000008fb000000100044006900730070006c00610079007303000000980000002e000004df000003d9fb0000001200530065006c0065006300740069006f006e00000001e10000009b0000005c00fffffffb0000001e0054006f006f006c002000500072006f007000650072007400690065007302000001ed000001df00000185000000a3fb000000120056006900650077007300200054006f006f02000001df000002110000018500000122fb000000200054006f006f006c002000500072006f0070006500720074006900650073003203000002880000011d000002210000017afb0000002000730065006c0065006300740069006f006e00200062007500660066006500720200000138000000aa0000023a00000294fb00000014005700690064006500530074006500720065006f02000000e6000000d2000003ee0000030bfb0000000c004b0069006e0065006300740200000186000001060000030c00000261000000010000010f00000369fc0200000002fb0000001e0054006f006f006c002000500072006f00700065007200740069006500730100000041000000780000000000000000fb0000001200530065006c0065006300740069006f006e010000025a000000b200000000000000000000000200000780000000c7fc0100000002fb0000000a005600690065007700730200000780000002cd000001ef0000016bfb0000000a00560069006500770073030000004e00000080000002e100000197000000030000035c0000003efc0100000002fb0000000800540069006d006501000000000000035c0000030700fffffffb0000000800540069006d006501000000000000045000000000000000000000035c000002a900000004000000040000000800000008fc0000000100000002000000010000000a0054006f006f006c00730100000000ffffffff0000000000000000
   Selection:
     collapsed: false
   Time:
@@ -692,5 +477,5 @@ Window Geometry:
   Views:
     collapsed: false
   Width: 860
-  X: 1925
-  Y: 27
+  X: 2354
+  Y: 122
