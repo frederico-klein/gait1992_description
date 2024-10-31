@@ -1,0 +1,22 @@
+<package>
+  <name>gait1992</name>
+  <version>0.0.1</version>
+  <description>
+    URDF description, osim model and flexbe behaviors and states necessary to setup this model
+  </description>
+  <maintainer email="frekle@kth.se">frekle</maintainer>
+  <license>GPL</license>
+  
+  <export>
+    <metapackage/>
+  </export>
+
+
+  <buildtool_depend>catkin</buildtool_depend>
+
+  <run_depend>gait1992_description</run_depend>
+  <run_depend>gait1992_fb_flexbe_states</run_depend>
+  <run_depend>gait1992_fb_flexbe_behaviors</run_depend>
+
+</package>
+
