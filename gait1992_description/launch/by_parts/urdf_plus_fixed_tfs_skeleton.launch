@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+
+<launch>
+	<arg name="foot_left_name" default="calcn_l"/>
+	<arg name="foot_right_name" default="calcn_r"/>
+	<arg name="use_gui"	default="false"/>
+	<arg name="tf_prefix" default="ik"/>
+	<arg name="scale" 	default="1"/>
+	<group ns="ik">
+		<!-- 1 -->
+		<param name="robot_description" command="$(find xacro)/xacro $(find test_moticon_insoles)/human_with_ximus_movable_and_insole.urdf.xacro left_name:=$(arg foot_left_name) right_name:=$(arg foot_right_name) color:=1.1 scale:=$(arg scale)" />
+
+		<!-- 1, 2 represent the opensim model-->
+		<!-- 2 -->
+		<!--TODO: these also need scaling! -->
+		<group unless="$(arg use_gui)" >
+			<node pkg="tf2_ros" type="static_transform_publisher" name="subtalar_r" args=" 0.00792000 -0.04877000 -0.04195000 0 0 0 $(arg tf_prefix)/talus_r $(arg tf_prefix)/calcn_r " />
+
+			<node pkg="tf2_ros" type="static_transform_publisher" name="mtp_r" args=" 0.00108000  0.17880000 -0.00200000 0 0 0 $(arg tf_prefix)/calcn_r $(arg tf_prefix)/toes_r " />
+
+			<node pkg="tf2_ros" type="static_transform_publisher" name="subtalar_l" args="-0.00792000 -0.04877000 -0.04195000 0 0 0 $(arg tf_prefix)/talus_l $(arg tf_prefix)/calcn_l " />
+
+			<node pkg="tf2_ros" type="static_transform_publisher" name="mtp_l" args="-0.00108000  0.17880000 -0.00200000 0 0 0 $(arg tf_prefix)/calcn_l $(arg tf_prefix)/toes_l " />
+
+		</group>
+	</group>
+</launch>

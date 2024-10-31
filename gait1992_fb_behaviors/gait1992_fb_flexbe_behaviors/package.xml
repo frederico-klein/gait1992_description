@@ -10,6 +10,8 @@
   <buildtool_depend>catkin</buildtool_depend>
 
   <run_depend>rospy</run_depend>
+  <run_depend>acquisition_fb_flexbe_states</run_depend>
+  <run_depend>gait1992_description</run_depend>
 
   <export>
     <flexbe_behaviors />

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<behavior name="test_function">
+
+	<executable package_path="test_gait1992_fb_flexbe_behaviors.test_function_sm" class="test_functionSM" />
+	<tagstring>test</tagstring>
+	<author>fbk</author>
+	<date>Thu Oct 31 2024</date>
+	<description>
+		.
+	</description>
+
+
+	<!-- Contained Behaviors -->
+
+	<!-- Available Parameters -->
+	<params>
+
+		<param type="numeric" name="height" default="0" label="height" hint="Sets the height">
+			<min value="0" />
+			<max value="1" />
+		</param>
+
+	</params>
+
+
+</behavior>

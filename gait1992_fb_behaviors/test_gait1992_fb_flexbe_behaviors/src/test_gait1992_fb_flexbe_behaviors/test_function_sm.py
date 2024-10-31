@@ -8,34 +8,35 @@
 ###########################################################
 
 from flexbe_core import Behavior, Autonomy, OperatableStateMachine, ConcurrencyContainer, PriorityContainer, Logger
-from acquisition_fb_flexbe_states.wait_for_messages import WaitForMessages
+from flexbe_states.log_state import LogState
 # Additional imports can be added inside the following tags
 # [MANUAL_IMPORT]
-
+import rospkg
 # [/MANUAL_IMPORT]
 
 
 '''
-Created on Thu Oct 24 2024
+Created on Thu Oct 31 2024
 @author: fbk
 '''
-class test_wait_for_messageSM(Behavior):
+class test_functionSM(Behavior):
 	'''
 	.
 	'''
 
 
 	def __init__(self):
-		super(test_wait_for_messageSM, self).__init__()
-		self.name = 'test_wait_for_message'
+		super(test_functionSM, self).__init__()
+		self.name = 'test_function'
 
 		# parameters of this behavior
+		self.add_parameter('height', 0)
 
 		# references to used behaviors
 
 		# Additional initialization code can be added inside the following tags
 		# [MANUAL_INIT]
-		
+		self.rospack = rospkg.RosPack()
 		# [/MANUAL_INIT]
 
 		# Behavior comments:
@@ -43,7 +44,8 @@ class test_wait_for_messageSM(Behavior):
 
 
 	def create(self):
-		# x:30 y:365, x:261 y:595
+		hello = self.find_pkg("gait1992_description")
+		# x:30 y:365, x:457 y:431
 		_state_machine = OperatableStateMachine(outcomes=['finished', 'failed'])
 
 		# Additional creation code can be added inside the following tags
@@ -53,11 +55,11 @@ class test_wait_for_messageSM(Behavior):
 
 
 		with _state_machine:
-			# x:411 y:205
-			OperatableStateMachine.add('test_wait',
-										WaitForMessages(topics_list=["test"], timeout=10),
-										transitions={'continue': 'finished', 'failed': 'failed'},
-										autonomy={'continue': Autonomy.Off, 'failed': Autonomy.Off})
+			# x:359 y:151
+			OperatableStateMachine.add('test_log',
+										LogState(text=hello, severity=Logger.REPORT_HINT),
+										transitions={'done': 'finished'},
+										autonomy={'done': Autonomy.Off})
 
 
 		return _state_machine
@@ -65,5 +67,6 @@ class test_wait_for_messageSM(Behavior):
 
 	# Private functions can be added inside the following tags
 	# [MANUAL_FUNC]
-	
+	def find_pkg(self, pkg):
+		return self.rospack.get_path(pkg)
 	# [/MANUAL_FUNC]
