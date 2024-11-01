@@ -59,7 +59,7 @@ class urdf_simple_scalingSM(Behavior):
 		config_file = package_path+"/config/urdf_everything.yaml"
 		model_default_height = 1.8
 		# x:30 y:365, x:920 y:670
-		_state_machine = OperatableStateMachine(outcomes=['finished', 'failed'])
+		_state_machine = OperatableStateMachine(outcomes=['finished', 'failed'], input_keys=['insole_length'])
 		_state_machine.userdata.load_env = {}
 		_state_machine.userdata.tf_prefix = self.tf_prefix
 		_state_machine.userdata.foot_left_name = "calcn_l"
@@ -90,7 +90,7 @@ class urdf_simple_scalingSM(Behavior):
 			OperatableStateMachine.add('node_loader',
 										VariableTmuxSetupFromYamlState(session_name=session_name, startup_yaml=config_file, append_node=[]),
 										transitions={'continue': 'finished', 'failed': 'failed'},
-										autonomy={'continue': Autonomy.Full, 'failed': Autonomy.High},
+										autonomy={'continue': Autonomy.Inherit, 'failed': Autonomy.Inherit},
 										remapping={'node_start_list': 'node_start_list', 'load_env': 'load_env'})
 
 			# x:386 y:465
