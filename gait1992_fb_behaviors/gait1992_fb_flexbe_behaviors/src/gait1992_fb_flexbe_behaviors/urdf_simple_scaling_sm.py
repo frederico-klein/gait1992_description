@@ -35,8 +35,11 @@ class urdf_simple_scalingSM(Behavior):
 		self.add_parameter('model_flexbe_package', 'gait1992_fb_flexbe_behaviors')
 		self.add_parameter('height', 1.8)
 		self.add_parameter('tf_prefix', 'ik')
-		self.add_parameter('foot_distance_from_ground', 0)
+		self.add_parameter('insole_distance_from_foot', 0.015)
 		self.add_parameter('ignore_insole_imu_for_vis', True)
+		self.add_parameter('use_gui', False)
+		self.add_parameter('adjustable_tfs', False)
+		self.add_parameter('insole_length', 0.2742)
 
 		# references to used behaviors
 
@@ -54,17 +57,21 @@ class urdf_simple_scalingSM(Behavior):
 		package_path = self.find_pkg(self.model_flexbe_package)
 		session_name = "testtt"
 		config_file = package_path+"/config/urdf_everything.yaml"
+		model_default_height = 1.8
 		# x:30 y:365, x:920 y:670
 		_state_machine = OperatableStateMachine(outcomes=['finished', 'failed'])
 		_state_machine.userdata.load_env = {}
 		_state_machine.userdata.tf_prefix = self.tf_prefix
 		_state_machine.userdata.foot_left_name = "calcn_l"
 		_state_machine.userdata.foot_right_name = "calcn_r"
-		_state_machine.userdata.foot_distance_from_ground = self.foot_distance_from_ground
+		_state_machine.userdata.insole_distance_from_foot = self.insole_distance_from_foot
 		_state_machine.userdata.ignore_insole_imu_for_vis = self.ignore_insole_imu_for_vis
 		_state_machine.userdata.node_start_list = []
-		_state_machine.userdata.use_gui = False
+		_state_machine.userdata.use_gui = self.use_gui
 		_state_machine.userdata.base_parent = "map"
+		_state_machine.userdata.adjustable_tfs = self.adjustable_tfs
+		_state_machine.userdata.insole_length = self.insole_length
+		_state_machine.userdata.scale = self.height/model_default_height
 
 		# Additional creation code can be added inside the following tags
 		# [MANUAL_CREATE]
@@ -91,7 +98,7 @@ class urdf_simple_scalingSM(Behavior):
 										UrdfEnvUserDataSetterState(),
 										transitions={'done': 'node_loader'},
 										autonomy={'done': Autonomy.Off},
-										remapping={'use_gui': 'use_gui', 'base_parent': 'base_parent', 'tf_prefix': 'tf_prefix', 'foot_left_name': 'foot_left_name', 'foot_right_name': 'foot_right_name', 'foot_distance_from_ground': 'foot_distance_from_ground', 'ignore_insole_imu_for_vis': 'ignore_insole_imu_for_vis', 'env_vars': 'load_env'})
+										remapping={'scale': 'scale', 'use_gui': 'use_gui', 'base_parent': 'base_parent', 'tf_prefix': 'tf_prefix', 'foot_left_name': 'foot_left_name', 'foot_right_name': 'foot_right_name', 'insole_distance_from_foot': 'insole_distance_from_foot', 'insole_length': 'insole_length', 'ignore_insole_imu_for_vis': 'ignore_insole_imu_for_vis', 'adjustable_tfs': 'adjustable_tfs', 'env_vars': 'load_env'})
 
 
 		return _state_machine

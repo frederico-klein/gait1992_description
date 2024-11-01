@@ -1,5 +1,7 @@
 <launch>
-    <node pkg="joint_state_publisher_gui" type="joint_state_publisher_gui" name="human_joint_gui" >
+    <arg name="do_remap" default="true" />
+    <node pkg="joint_state_publisher_gui" type="joint_state_publisher_gui" name="human_joint_gui" if="$(arg do_remap)">
       <remap from="joint_states" to="model_generic/joint_states" />
     </node>
+    <node pkg="joint_state_publisher_gui" type="joint_state_publisher_gui" name="human_joint_gui" unless="$(arg do_remap)"/>
 </launch>

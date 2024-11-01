@@ -25,7 +25,7 @@ class UrdfEnvUserDataSetterState(EventState):
         '''
         Constructor
         '''
-        super(UrdfEnvUserDataSetterState, self).__init__(input_keys=["use_gui","base_parent","tf_prefix","foot_left_name","foot_right_name","foot_distance_from_ground", "ignore_insole_imu_for_vis","env_vars"], output_keys=["env_vars"], outcomes=["done"])
+        super(UrdfEnvUserDataSetterState, self).__init__(input_keys=["scale","use_gui","base_parent","tf_prefix","foot_left_name","foot_right_name","insole_distance_from_foot","insole_length", "ignore_insole_imu_for_vis","adjustable_tfs","env_vars"], output_keys=["env_vars"], outcomes=["done"])
 
         self._return_code = None
 
@@ -47,8 +47,11 @@ class UrdfEnvUserDataSetterState(EventState):
               "TF_PREFIX"                   : userdata.tf_prefix                        ,
               "FOOT_RIGHT_NAME"             : userdata.foot_right_name                  ,
               "FOOT_LEFT_NAME"              : userdata.foot_left_name                   ,
-              "FOOT_DISTANCE_FROM_GROUND"   : userdata.foot_distance_from_ground        ,
+              "INSOLE_LENGTH"               : userdata.insole_length                    ,
+              "INSOLE_DISTANCE_FROM_FOOT"   : userdata.insole_distance_from_foot               ,
               "IGNORE_INSOLE_IMU_FOR_VIS"   : userdata.ignore_insole_imu_for_vis        ,
+              "ADJUSTABLE_TFS"              : userdata.adjustable_tfs                   ,
+              "SCALE"                       : userdata.scale                            ,
               })
           Logger.logdebug(f"[env_vars_userdata_setter] env_vars:  {userdata.env_vars}")
           self._return_code = 'done'

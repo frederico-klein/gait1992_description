@@ -6,9 +6,11 @@
 	<arg name="use_gui"	default="false"/>
 	<arg name="tf_prefix" default="ik"/>
 	<arg name="scale" 	default="1"/>
+	<arg name="insole_length" 	default="0.25"/>
+	<arg name="insole_scale_factor" default="$(eval arg('insole_length')/0.2742)"/>
 	<group ns="ik">
 		<!-- 1 -->
-		<param name="robot_description" command="$(find xacro)/xacro $(find test_moticon_insoles)/human_with_ximus_movable_and_insole.urdf.xacro left_name:=$(arg foot_left_name) right_name:=$(arg foot_right_name) color:=1.1 scale:=$(arg scale)" />
+		<param name="robot_description" command="$(find xacro)/xacro $(find test_moticon_insoles)/human_with_ximus_movable_and_insole.urdf.xacro left_name:=$(arg foot_left_name) right_name:=$(arg foot_right_name) color:=1.1 scale:=$(arg scale) insole_scale_factor:=$(arg insole_scale_factor)" />
 
 		<!-- 1, 2 represent the opensim model-->
 		<!-- 2 -->

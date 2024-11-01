@@ -2,7 +2,11 @@
 <launch>
 	<arg name="use_gui"	default="false"/>
 	<group ns="ik">
-		<include if="$(arg use_gui)" file="$(find gait1992_description)/launch/gui.launch"/>
-		<include if="$(arg use_gui)" file="$(find gait1992_description)/launch/pelvis_map_pose_fake_tf_publisher.launch"/>
+		<include if="$(arg use_gui)" file="$(find gait1992_description)/launch/gui.launch">
+			<arg name="do_remap" value="false" />
+		</include>
+		<include if="$(arg use_gui)" file="$(find gait1992_description)/launch/pelvis_map_pose_fake_tf_publisher.launch">
+			<arg name="base_frame" value="ik/pelvis" />
+		</include>
 	</group>
 </launch>
