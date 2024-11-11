@@ -90,7 +90,7 @@ class urdf_simple_scalingSM(Behavior):
 			OperatableStateMachine.add('node_loader',
 										VariableTmuxSetupFromYamlState(session_name=session_name, startup_yaml=config_file, append_node=[]),
 										transitions={'continue': 'finished', 'failed': 'failed'},
-										autonomy={'continue': Autonomy.Inherit, 'failed': Autonomy.Inherit},
+										autonomy={'continue': Autonomy.Off, 'failed': Autonomy.Off},
 										remapping={'node_start_list': 'node_start_list', 'load_env': 'load_env'})
 
 			# x:386 y:465

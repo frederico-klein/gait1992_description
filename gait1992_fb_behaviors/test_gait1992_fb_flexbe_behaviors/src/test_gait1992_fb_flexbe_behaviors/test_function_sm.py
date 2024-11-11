@@ -21,7 +21,9 @@ Created on Thu Oct 31 2024
 '''
 class test_functionSM(Behavior):
 	'''
-	.
+	tests usage of private function to find package. 
+
+open the source code and copy paste it to use in your own behavior
 	'''
 
 
